@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* Instrument Serif is the display face; body text overrides to system-ui inline. */
+  font-family: 'Instrument Serif', serif;
+  background: #000;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ------------------------------------------------------------------ */
+/* Liquid glass — frosted panel with a soft inner rim highlight.       */
+/* ------------------------------------------------------------------ */
+/* In the components layer so Tailwind position utilities (e.g. `fixed` on   */
+/* the demo badge) still win over the `position: relative` set here.         */
+@layer components {
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.01);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: none;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .liquid-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.4px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.45) 0%,
+      rgba(255, 255, 255, 0.15) 20%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0.15) 80%,
+      rgba(255, 255, 255, 0.45) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Readability scrim — very slow vertical "breathing" so no video      */
+/* edge is ever exposed (constant slight scale-up covers the drift).   */
+/* ------------------------------------------------------------------ */
+@keyframes scrim-breathe {
+  0%,
+  100% {
+    transform: scale(1.03) translateY(0);
+  }
+  50% {
+    transform: scale(1.03) translateY(-6px);
+  }
+}
+
+.scrim-breathe {
+  animation: scrim-breathe 6s ease-in-out infinite;
+  transform: scale(1.03);
+}
+
+/* Respect reduced motion: hold the scrim still (crossfade stays). */
+@media (prefers-reduced-motion: reduce) {
+  .scrim-breathe {
+    animation: none;
+  }
+}
+
+/* CTA input placeholder — inherits the (theme-aware) text colour, dimmed. */
+.email-input::placeholder {
+  color: currentColor;
+  opacity: 0.55;
+}
+
+/* Mobile menu links/buttons rise in from a slight downward offset. */
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus rings for keyboard users on all interactive elements. */
+:where(a, button, input):focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
