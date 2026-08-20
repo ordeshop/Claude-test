@@ -39,6 +39,15 @@ Claude Code CLI:
 /plugin install superpowers@claude-plugins-official
 ```
 
+## Bundled skill packages
+
+- **Superpowers** (`obra/superpowers`, MIT): brainstorming, writing/executing
+  plans, TDD, debugging, code-review, and more.
+- **UI/UX Pro Max** (`nextlevelbuilder/ui-ux-pro-max-skill`, MIT): `ui-ux-pro-max`,
+  `uupm-design`, `ui-styling`, `design-system`, `brand`, `banner-design`, `slides`.
+  Note: this package's `design` skill was renamed to **`uupm-design`** to avoid
+  colliding with Claude Code's built-in `design` (canvas) skill.
+
 ## License
 
 Superpowers is MIT-licensed. See `skills/SUPERPOWERS-LICENSE`.
