@@ -2,7 +2,7 @@
 #
 # install.sh — Install this repo's Claude Code skills globally.
 #
-# Copies every skill under .claude/skills/ into your personal
+# Copies every skill under plugins/orde-design/skills/ into your personal
 # ~/.claude/skills/ directory, so the skills are available in ALL projects
 # where you run Claude Code locally (not just this repo).
 #
@@ -15,7 +15,7 @@ set -euo pipefail
 
 # Resolve the directory this script lives in, so it works from anywhere.
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SRC_DIR="$SCRIPT_DIR/.claude/skills"
+SRC_DIR="$SCRIPT_DIR/plugins/orde-design/skills"
 DEST_DIR="${CLAUDE_SKILLS_DIR:-$HOME/.claude/skills}"
 
 FORCE=0
@@ -69,8 +69,8 @@ for skill in "${SKILLS[@]}"; do
   installed=$((installed + 1))
 done
 
-# Copy any bundled license files sitting alongside the skills.
-find "$SRC_DIR" -maxdepth 1 -type f -name '*LICENSE*' -exec cp {} "$DEST_DIR"/ \; 2>/dev/null || true
+# Copy any bundled license files sitting alongside the skills (plugin root).
+find "$SRC_DIR/.." -maxdepth 1 -type f -name '*LICENSE*' -exec cp {} "$DEST_DIR"/ \; 2>/dev/null || true
 
 echo ""
 echo "Done. Installed: $installed, skipped: $skipped."
