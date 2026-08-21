@@ -1,0 +1,16 @@
+{
+  "name": "orde-design",
+  "description": "All-in-one skill pack: 34 Claude Code skills bundled together — brand & design systems (awesome-design-md, 74 brands), anti-slop frontend design/codegen (tasteskill), UI/UX intelligence, and engineering workflow skills (brainstorming, TDD, debugging, code review, plans).",
+  "version": "1.0.0",
+  "author": {
+    "name": "ordeshop"
+  },
+  "keywords": [
+    "design",
+    "ui",
+    "ux",
+    "frontend",
+    "skills",
+    "workflow"
+  ]
+}

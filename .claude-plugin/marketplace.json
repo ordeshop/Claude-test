@@ -9,8 +9,8 @@
   },
   "plugins": [
     {
-      "name": "orde-skillpack",
-      "source": "./plugins/orde-skillpack",
+      "name": "orde-design",
+      "source": "./plugins/orde-design",
       "description": "All 34 skills in one install: brand/design systems, anti-slop frontend design & codegen, UI/UX intelligence, and engineering workflow skills.",
       "version": "1.0.0",
       "category": "design"
