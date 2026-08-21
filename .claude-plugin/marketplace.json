@@ -1,0 +1,19 @@
+{
+  "name": "orde-skills",
+  "owner": {
+    "name": "ordeshop"
+  },
+  "metadata": {
+    "description": "ORDÉ skill marketplace — one plugin that bundles all design, frontend, and workflow skills for Claude Code.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "orde-skillpack",
+      "source": "./plugins/orde-skillpack",
+      "description": "All 34 skills in one install: brand/design systems, anti-slop frontend design & codegen, UI/UX intelligence, and engineering workflow skills.",
+      "version": "1.0.0",
+      "category": "design"
+    }
+  ]
+}
