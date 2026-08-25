@@ -1,0 +1,313 @@
+<title>KOMLA — Photography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz@0,6..72;1,6..72&display=swap">
+
+<style>
+  :root{
+    /* DARK-FIRST gallery — but full light support below */
+    --bg:#0C0C0E;
+    --bg-2:#131316;
+    --surface:#17171B;
+    --ink:#ECE9E2;
+    --ink-soft:#9C978C;
+    --hair:#26262B;
+    --accent:#C9A66B;      /* warm restrained gold, used sparingly */
+    --on-accent:#141212;
+    --overlay:rgba(8,8,10,.55);
+    color-scheme:dark;
+  }
+  :root[data-theme="light"]{
+    --bg:#F3F1EC;
+    --bg-2:#EDEAE2;
+    --surface:#FBFAF6;
+    --ink:#1B1A17;
+    --ink-soft:#6B6559;
+    --hair:#DCD6C9;
+    --accent:#9A7327;
+    --on-accent:#FBF7EE;
+    --overlay:rgba(20,18,14,.30);
+    color-scheme:light;
+  }
+
+  *{box-sizing:border-box}
+  ::selection{background:var(--accent);color:var(--on-accent)}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);caret-color:var(--accent);
+    font-family:"Newsreader",Georgia,serif;font-size:clamp(16px,1.05vw,18px);line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  *{scrollbar-width:thin;scrollbar-color:var(--hair) transparent}
+  *::-webkit-scrollbar{width:11px;height:11px}
+  *::-webkit-scrollbar-thumb{background:var(--hair)}
+  *::-webkit-scrollbar-track{background:transparent}
+
+  h1,h2,h3,.grotesk{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;line-height:1;margin:0;letter-spacing:-.01em}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .wrap{width:min(1240px,100% - 3rem);margin-inline:auto}
+  .label{font-family:"Bricolage Grotesque",sans-serif;font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--ink-soft)}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+  .brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:.16em}
+  .nav-links{display:flex;gap:2.2rem}
+  .nav-links a{font-family:"Bricolage Grotesque",sans-serif;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-right{display:flex;align-items:center;gap:1.3rem}
+  .tt{background:transparent;border:0;color:var(--ink-soft);cursor:pointer;width:30px;height:30px;display:grid;place-items:center;padding:0;transition:color .2s}
+  .tt:hover{color:var(--accent)}
+  .tt svg{width:20px;height:20px}
+  .enquire{font-family:"Bricolage Grotesque",sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink);border:1px solid var(--hair);border-radius:999px;padding:.55em 1.1em;transition:border-color .2s,color .2s}
+  .enquire:hover{border-color:var(--accent);color:var(--accent)}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{position:relative;height:min(92vh,860px);min-height:560px;overflow:hidden;display:flex;align-items:flex-end}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--overlay) 0%,transparent 30%,transparent 55%,var(--bg) 100%)}
+  .hero-in{position:relative;z-index:2;padding-bottom:clamp(2.5rem,6vw,5rem)}
+  .hero .kicker{color:#EDE9E2;opacity:.9}
+  .hero h1{color:#F6F3EC;font-size:clamp(4rem,17vw,13rem);font-weight:800;letter-spacing:.02em;line-height:.9;text-shadow:0 2px 40px rgba(0,0,0,.4)}
+  .hero .tag{color:#EDE9E2;font-size:clamp(1.05rem,1.6vw,1.35rem);margin-top:1rem;max-width:40ch;text-shadow:0 1px 20px rgba(0,0,0,.5)}
+  .hero .cta{margin-top:1.8rem;display:inline-flex;align-items:center;gap:.6em;font-family:"Bricolage Grotesque",sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--on-accent);background:var(--accent);padding:.9em 1.5em;border-radius:999px;transition:transform .18s ease}
+  .hero .cta:hover{transform:translateY(-2px)}
+  /* reveal */
+  .hero .kicker,.hero h1,.hero .tag,.hero .cta{opacity:0;transform:translateY(24px)}
+  .on .hero .kicker{opacity:.9;transform:none;transition:opacity .8s ease .05s,transform .8s cubic-bezier(.2,.9,.2,1) .05s}
+  .on .hero h1{opacity:1;transform:none;transition:opacity .9s ease .15s,transform .9s cubic-bezier(.2,.9,.2,1) .15s}
+  .on .hero .tag{opacity:1;transform:none;transition:opacity .8s ease .3s,transform .8s ease .3s}
+  .on .hero .cta{opacity:1;transform:none;transition:opacity .8s ease .45s,transform .8s ease .45s}
+  @media (prefers-reduced-motion:reduce){.hero .kicker,.hero h1,.hero .tag,.hero .cta{opacity:1!important;transform:none!important;transition:none!important}}
+
+  section{padding:clamp(4rem,8vw,7rem) 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.6rem}
+  .sec-head h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+  .sec-head p{color:var(--ink-soft);max-width:32ch;font-size:.95rem}
+
+  /* gallery — masonry */
+  .gallery{columns:3;column-gap:1.1rem}
+  @media(max-width:900px){.gallery{columns:2}}
+  @media(max-width:560px){.gallery{columns:1}}
+  figure.shot{break-inside:avoid;margin:0 0 1.1rem;position:relative;overflow:hidden;border-radius:4px;background:var(--surface)}
+  figure.shot img{width:100%;height:auto;transition:transform .6s cubic-bezier(.2,.8,.2,1);opacity:0}
+  figure.shot img.loaded{opacity:1}
+  figure.shot:hover img{transform:scale(1.03)}
+  figure.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.4rem 1rem .9rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;
+    background:linear-gradient(transparent,rgba(8,8,10,.72));opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+  figure.shot:hover figcaption,figure.shot:focus-within figcaption{opacity:1;transform:none}
+  figure.shot .t{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1rem;color:#F4F1EA}
+  figure.shot .c{font-family:"Bricolage Grotesque",sans-serif;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+
+  /* about */
+  .about{background:var(--bg-2);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .about .portrait{border-radius:4px;overflow:hidden;background:var(--surface)}
+  .about .portrait img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+  .about h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:1.4rem}
+  .about p+p{margin-top:1rem}
+  .about .stats{display:flex;gap:2.5rem;margin-top:2rem;flex-wrap:wrap}
+  .about .stats .n{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:2rem}
+  .about .stats .l{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:.2rem}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:2rem}.about .portrait img{aspect-ratio:4/5;max-height:520px}}
+
+  /* services */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-bottom:3.5rem}
+  .svc{border:1px solid var(--hair);border-radius:6px;padding:1.8rem;background:var(--surface)}
+  .svc .no{font-family:"Bricolage Grotesque",sans-serif;color:var(--accent);font-size:.8rem;letter-spacing:.14em;font-weight:600}
+  .svc h3{font-size:1.5rem;margin:.7rem 0 .6rem}
+  .svc p{color:var(--ink-soft);font-size:.95rem}
+  .svc .from{margin-top:1.1rem;font-family:"Bricolage Grotesque",sans-serif;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+  .step .k{font-family:"Bricolage Grotesque",sans-serif;color:var(--accent);font-weight:700}
+  .step h4{font-family:"Bricolage Grotesque",sans-serif;font-size:1.1rem;margin:.5rem 0 .4rem}
+  .step p{color:var(--ink-soft);font-size:.92rem}
+  @media(max-width:820px){.svc-grid,.steps{grid-template-columns:1fr}}
+
+  /* contact */
+  .contact{background:var(--bg-2);border-top:1px solid var(--hair)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem)}
+  .contact h2{font-size:clamp(2.4rem,6vw,4rem);max-width:12ch;margin-bottom:1.2rem}
+  .contact .lead{color:var(--ink-soft);max-width:36ch}
+  .contact .details{margin-top:2rem;display:flex;flex-direction:column;gap:.6rem}
+  .contact .details a{font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem}
+  .contact .details a:hover{color:var(--accent)}
+  form{display:grid;gap:1rem}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  label{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.4rem;font-family:"Bricolage Grotesque",sans-serif}
+  input,select,textarea{width:100%;background:var(--surface);border:1px solid var(--hair);border-radius:6px;color:var(--ink);
+    font-family:inherit;font-size:1rem;padding:.8em .9em;transition:border-color .2s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  textarea{min-height:120px;resize:vertical}
+  button.send{font-family:"Bricolage Grotesque",sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    color:var(--on-accent);background:var(--accent);border:0;border-radius:999px;padding:.95em 1.6em;cursor:pointer;justify-self:start;transition:transform .18s}
+  button.send:hover{transform:translateY(-2px)}
+  .formnote{font-size:.8rem;color:var(--ink-soft)}
+  .ok{display:none;font-family:"Bricolage Grotesque",sans-serif;color:var(--accent);font-weight:600}
+  .ok.show{display:block}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr;gap:2.4rem}.row2{grid-template-columns:1fr}}
+
+  footer{padding:3rem 0;border-top:1px solid var(--hair)}
+  .foot-in{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;align-items:center;color:var(--ink-soft);font-size:.85rem}
+  .foot-in .brand{color:var(--ink);font-size:1.2rem}
+
+  .fade{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .fade.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+</style>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">KOMLA</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="tt" id="themeBtn" aria-label="Toggle light or dark theme" title="Toggle theme">
+        <svg id="ttIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"></svg>
+      </button>
+      <a href="#contact" class="enquire">Enquire</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Introduction">
+    <img src="images/hero.jpg" alt="A woman in a dark blazer sitting by a large window in soft natural light, photographed by KOMLA">
+    <div class="wrap hero-in">
+      <p class="label kicker">Photographer · Vienna</p>
+      <h1>KOMLA</h1>
+      <p class="tag">Wedding, editorial and brand photography — telling honest stories in natural light, available worldwide.</p>
+      <a href="#contact" class="cta">Start an enquiry →</a>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Selected work</h2>
+        <p>A cross-section from recent weddings, editorial shoots and brand commissions.</p>
+      </div>
+      <div class="gallery">
+        <figure class="shot"><img data-src="images/work-wedding-couple.jpg" alt="A bride and groom embracing and laughing in a golden field at sunset"><figcaption><span class="t">Anna &amp; Theo</span><span class="c">Wedding</span></figcaption></figure>
+        <figure class="shot"><img data-src="images/work-fashion.jpg" alt="A model in an avant-garde tailored outfit against a studio backdrop"><figcaption><span class="t">Structure</span><span class="c">Editorial</span></figcaption></figure>
+        <figure class="shot"><img data-src="images/work-wedding-rings.jpg" alt="Close-up of wedding rings on a hand beside a bouquet and candlelight"><figcaption><span class="t">The details</span><span class="c">Wedding</span></figcaption></figure>
+        <figure class="shot"><img data-src="images/work-product.jpg" alt="A luxury wristwatch with blue dial on dark slate, studio lighting"><figcaption><span class="t">Meridian No.4</span><span class="c">Brand · Product</span></figcaption></figure>
+        <figure class="shot"><img data-src="images/work-beauty.jpg" alt="Beauty close-up with colourful artistic eye makeup"><figcaption><span class="t">Colour study</span><span class="c">Editorial · Beauty</span></figcaption></figure>
+        <figure class="shot"><img data-src="images/work-artisan.jpg" alt="A ceramicist shaping a bowl on a pottery wheel in a sunlit workshop"><figcaption><span class="t">The Clay Room</span><span class="c">Brand · Story</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="portrait"><img src="images/portrait.jpg" alt="Portrait of KOMLA, a photographer holding a medium-format camera in a bright studio"></div>
+      <div>
+        <p class="label" style="color:var(--accent)">About</p>
+        <h2 style="margin-top:.8rem">I photograph the moments people actually remember.</h2>
+        <p>I'm KOMLA — a photographer based in Vienna, working across weddings, editorial and brands. My approach is quiet and observational: I'd rather catch the real laugh than stage a perfect one.</p>
+        <p>Ten years behind the camera have taken me from wedding fields to studio sets and product tables. Whatever the brief, the aim is the same — honest images with a point of view, shot mostly in natural light.</p>
+        <div class="stats">
+          <div><div class="n tnum">10+</div><div class="l">Years shooting</div></div>
+          <div><div class="n tnum">180</div><div class="l">Weddings</div></div>
+          <div><div class="n tnum">40</div><div class="l">Brands &amp; titles</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>How we can work</h2>
+        <p>Clear scopes, honest pricing. Every project starts with a conversation.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc"><div class="no">01</div><h3>Weddings</h3><p>Full-day, documentary-led coverage of the whole story — getting ready to last dance. Two-photographer option available.</p><div class="from">From €2,400</div></article>
+        <article class="svc"><div class="no">02</div><h3>Editorial &amp; Fashion</h3><p>Look-books, campaigns and magazine editorial. Studio or location, with art-direction and retouching included.</p><div class="from">From €1,200 / day</div></article>
+        <article class="svc"><div class="no">03</div><h3>Brand &amp; Product</h3><p>Product, food and environmental brand stories that fit your channels — from a single hero shot to a full library.</p><div class="from">From €900</div></article>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="k">01</div><h4>Enquire</h4><p>Tell me the date, place and what you have in mind. I reply within two days.</p></div>
+        <div class="step"><div class="k">02</div><h4>Plan the shoot</h4><p>We lock the scope, shot list and a simple quote — no surprises.</p></div>
+        <div class="step"><div class="k">03</div><h4>Shoot &amp; deliver</h4><p>We make the pictures. Edited gallery delivered in two to three weeks.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="label" style="color:var(--accent)">Enquire</p>
+        <h2 style="margin-top:.8rem">Let's make something.</h2>
+        <p class="lead">Tell me about your day, your product or your idea. I take on a limited number of projects each month, so early is better.</p>
+        <div class="details">
+          <a href="mailto:hello@komla.photo">hello@komla.photo</a>
+          <a href="tel:+4300000000">+43 1 000 00 00</a>
+          <a href="#top">Instagram — @komla.photo</a>
+        </div>
+      </div>
+      <form id="enquiry" novalidate>
+        <div class="row2">
+          <div><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="row2">
+          <div><label for="type">Project type</label>
+            <select id="type" name="type"><option>Wedding</option><option>Editorial / Fashion</option><option>Brand / Product</option><option>Something else</option></select>
+          </div>
+          <div><label for="date">Date (if known)</label><input id="date" name="date" type="date"></div>
+        </div>
+        <div><label for="msg">Your message</label><textarea id="msg" name="msg" placeholder="A few words about what you have in mind…"></textarea></div>
+        <button type="submit" class="send">Send enquiry</button>
+        <p class="ok" id="ok">Thank you — your enquiry is on its way. I'll be in touch within two days.</p>
+        <p class="formnote">Demo form — on a live site this connects to email or a form service.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span class="brand grotesk">KOMLA</span>
+    <span>Wedding · Editorial · Brand photography — Vienna, worldwide</span>
+    <span>© 2026 KOMLA — a fictional demo, built with the ORDÉ skill pack.</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('themeBtn'), icon=document.getElementById('ttIcon'), KEY='komla-theme';
+    var sun='<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/>';
+    var moon='<path d="M20 14.5A7.5 7.5 0 019.5 4 7.5 7.5 0 1020 14.5Z"/>';
+    function resolved(){var t=root.getAttribute('data-theme');return t||'dark';}
+    function paint(){icon.innerHTML=resolved()==='dark'?moon:sun;}
+    try{var s=localStorage.getItem(KEY);if(s)root.setAttribute('data-theme',s);}catch(e){}
+    paint();
+    btn.addEventListener('click',function(){var n=resolved()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem(KEY,n);}catch(e){}paint();});
+
+    // hero reveal
+    requestAnimationFrame(function(){requestAnimationFrame(function(){document.body.classList.add('on');});});
+
+    // lazy-load gallery + fade
+    var imgs=document.querySelectorAll('figure.shot img[data-src]');
+    function load(img){img.src=img.getAttribute('data-src');img.addEventListener('load',function(){img.classList.add('loaded');});}
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){load(x.target);io.unobserve(x.target);}})},{rootMargin:'200px'});
+      imgs.forEach(function(i){io.observe(i);});
+    } else { imgs.forEach(load); }
+
+    // form
+    var f=document.getElementById('enquiry');
+    f.addEventListener('submit',function(e){e.preventDefault();if(!f.name.value||!f.email.value){f.reportValidity&&f.reportValidity();return;}document.getElementById('ok').classList.add('show');f.reset();});
+  })();
+</script>
