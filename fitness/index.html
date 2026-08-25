@@ -1,0 +1,143 @@
+<title>FORGE — Strength</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<style>
+  :root{
+    --bg:#0B0C0E; --bg-2:#111316; --surface:#15181C; --ink:#ECEDEE; --ink-soft:#8C9095; --hair:#23272C;
+    --accent:#E6452A; --on-accent:#0B0C0E; --overlay:rgba(6,7,8,.5); color-scheme:dark;
+  }
+  :root[data-theme="light"]{
+    --bg:#F1F0ED; --bg-2:#E7E5E0; --surface:#FBFAF8; --ink:#16181B; --ink-soft:#5C6167; --hair:#D5D2CB;
+    --accent:#D23A20; --on-accent:#FBFAF8; --overlay:rgba(20,18,16,.28); color-scheme:light;
+  }
+  *{box-sizing:border-box} ::selection{background:var(--accent);color:#fff}
+  html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:clamp(16px,1.05vw,18px);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  *{scrollbar-width:thin;scrollbar-color:var(--hair) transparent}*::-webkit-scrollbar{width:10px;height:10px}*::-webkit-scrollbar-thumb{background:var(--hair)}
+  h1,h2,h3,.disp{font-family:"Anton",Impact,sans-serif;font-weight:400;line-height:.98;margin:0;text-transform:uppercase;letter-spacing:.005em}
+  p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .wrap{width:min(1180px,100% - 3rem);margin-inline:auto}
+  .label{font-family:"Hanken Grotesk",sans-serif;font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+  .tnum{font-variant-numeric:tabular-nums}
+  header.nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+  .brand{font-family:"Anton",sans-serif;font-size:1.6rem;letter-spacing:.06em}
+  .nav-links{display:flex;gap:2rem}.nav-links a{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);transition:color .2s}.nav-links a:hover{color:var(--ink)}
+  .nav-right{display:flex;align-items:center;gap:1.1rem}
+  .tt{background:none;border:0;color:var(--ink-soft);cursor:pointer;width:30px;height:30px;display:grid;place-items:center;padding:0}.tt:hover{color:var(--accent)}.tt svg{width:20px;height:20px}
+  .pill{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--accent);padding:.6em 1.15em;clip-path:polygon(8% 0,100% 0,92% 100%,0 100%)}
+  @media(max-width:820px){.nav-links{display:none}}
+  .hero{position:relative;height:min(92vh,860px);min-height:560px;display:flex;align-items:flex-end;overflow:hidden}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--overlay),transparent 35%,transparent 45%,rgba(0,0,0,.78))}
+  .hero-in{position:relative;z-index:2;padding-bottom:clamp(2.6rem,6vw,5rem);color:#fff}
+  .hero h1{font-size:clamp(5rem,22vw,16rem);letter-spacing:.01em;line-height:.82}
+  .hero h1 span{color:var(--accent)}
+  .hero .tag{font-size:clamp(1.05rem,1.7vw,1.35rem);margin-top:.8rem;max-width:38ch;color:#DDD}
+  .hero .cta{margin-top:1.8rem}
+  .hero .kicker,.hero h1,.hero .tag,.hero .cta{opacity:0;transform:translateY(24px)}
+  .on .hero .kicker{opacity:1;transform:none;transition:.7s ease .05s}
+  .on .hero h1{opacity:1;transform:none;transition:.85s cubic-bezier(.2,.9,.2,1) .12s}
+  .on .hero .tag{opacity:1;transform:none;transition:.7s ease .32s}
+  .on .hero .cta{opacity:1;transform:none;transition:.7s ease .45s}
+  @media(prefers-reduced-motion:reduce){.hero *{opacity:1!important;transform:none!important}}
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--accent);padding:.95em 1.7em;clip-path:polygon(5% 0,100% 0,95% 100%,0 100%);transition:transform .18s}.btn:hover{transform:translateY(-2px)}
+  section{padding:clamp(4rem,8vw,7rem) 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.6rem}
+  .sec-head h2{font-size:clamp(2.6rem,6vw,4.6rem)}.sec-head p{color:var(--ink-soft);max-width:34ch}
+  .prog{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+  .p{border:1px solid var(--hair);background:var(--surface);padding:1.8rem;position:relative;overflow:hidden}
+  .p .no{font-family:"Anton",sans-serif;font-size:3rem;color:var(--hair);position:absolute;top:.4rem;right:1rem}
+  .p h3{font-size:1.7rem;margin-bottom:.6rem}.p p{color:var(--ink-soft);font-size:.95rem;position:relative}
+  @media(max-width:820px){.prog{grid-template-columns:1fr}}
+  .band{position:relative;height:min(60vh,460px);overflow:hidden;display:flex;align-items:center}
+  .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .band::after{content:"";position:absolute;inset:0;background:rgba(6,7,8,.55)}
+  .band .in{position:relative;z-index:2;color:#fff}
+  .band h2{font-size:clamp(2.4rem,6vw,4.5rem);max-width:16ch}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+  .grid2 figure{margin:0;overflow:hidden;background:var(--surface)}.grid2 img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.grid2 figure:hover img{transform:scale(1.04)}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .coach{background:var(--bg-2);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .coach-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .coach .ph{overflow:hidden;background:var(--surface)}.coach .ph img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+  .coach h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin:.5rem 0 1.2rem}.coach p+p{margin-top:1rem;color:var(--ink-soft)}
+  @media(max-width:760px){.coach-grid{grid-template-columns:1fr;gap:2rem}}
+  .price{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+  .tier{border:1px solid var(--hair);background:var(--surface);padding:2rem 1.6rem;text-align:center}
+  .tier.hot{border-color:var(--accent)}
+  .tier .n{font-family:"Anton",sans-serif;font-size:1.4rem}
+  .tier .amt{font-family:"Anton",sans-serif;font-size:3.2rem;margin:.6rem 0;line-height:1}
+  .tier .amt small{font-family:"Hanken Grotesk",sans-serif;font-size:.9rem;color:var(--ink-soft);font-weight:600}
+  .tier ul{list-style:none;padding:0;margin:1rem 0 1.5rem;color:var(--ink-soft);font-size:.92rem;display:grid;gap:.4rem}
+  @media(max-width:820px){.price{grid-template-columns:1fr}}
+  .cta-band{text-align:center}.cta-band h2{font-size:clamp(2.8rem,7vw,5.5rem)}.cta-band p{color:var(--ink-soft);margin:1rem auto 2rem;max-width:34ch}
+  footer{padding:3rem 0;border-top:1px solid var(--hair)}
+  .foot-in{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap;align-items:center;color:var(--ink-soft);font-size:.85rem}.foot-in .brand{color:var(--ink);font-size:1.4rem}
+</style>
+<header class="nav"><div class="wrap nav-in">
+  <a class="brand" href="#top">FORGE</a>
+  <nav class="nav-links"><a href="#programs">Programs</a><a href="#floor">The Floor</a><a href="#coach">Coaches</a><a href="#join">Join</a></nav>
+  <div class="nav-right"><button class="tt" id="tb" aria-label="Toggle theme"><svg id="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></svg></button><a href="#join" class="pill">Free trial</a></div>
+</div></header>
+<main id="top">
+  <section class="hero"><img src="images/hero.jpg" alt="Athlete squatting a loaded barbell in a gritty industrial gym">
+    <div class="wrap hero-in">
+      <p class="label kicker">Strength &amp; Conditioning · Vienna</p>
+      <h1>For<span>ge</span></h1>
+      <p class="tag">A barbell, a plan, and no fluff. Coaching that actually gets you stronger.</p>
+      <a href="#join" class="btn cta">Claim a free session →</a>
+    </div>
+  </section>
+
+  <section id="programs"><div class="wrap">
+    <div class="sec-head"><h2>Train with intent</h2><p>Three ways in — pick the one that fits where you are now.</p></div>
+    <div class="prog">
+      <div class="p"><span class="no">01</span><h3>Strength</h3><p>Barbell fundamentals — squat, press, pull. Structured progression, small groups, real numbers.</p></div>
+      <div class="p"><span class="no">02</span><h3>Conditioning</h3><p>High-energy classes: kettlebells, ropes, intervals. 45 minutes, coached start to finish.</p></div>
+      <div class="p"><span class="no">03</span><h3>1:1 Coaching</h3><p>Private programming built around your goals, schedule and history. The fastest way forward.</p></div>
+    </div>
+  </div></section>
+
+  <section class="band"><img src="images/class.jpg" alt="Group conditioning class with battle ropes and kettlebells"><div class="wrap in">
+    <p class="label">The Floor</p><h2>Come for a session, stay for the crew.</h2>
+  </div></section>
+
+  <section id="floor"><div class="wrap">
+    <div class="grid2">
+      <figure><img src="images/strength.jpg" alt="Chalked hands gripping a loaded barbell"></figure>
+      <figure><img src="images/detail.jpg" alt="Rack of dumbbells and weight plates in a dark gym"></figure>
+    </div>
+  </div></section>
+
+  <section class="coach" id="coach"><div class="wrap coach-grid">
+    <div class="ph"><img src="images/coach.jpg" alt="Portrait of a FORGE strength coach in the gym"></div>
+    <div><p class="label">Your coach</p><h2>Coached, not just watched.</h2>
+      <p>Every member gets a real coach on the floor — someone who knows your lifts, your limits and your goals.</p>
+      <p>Our team are certified strength coaches with years under the bar. No egos, no judgment. Just better every week.</p>
+    </div>
+  </div></section>
+
+  <section id="join"><div class="wrap">
+    <div class="sec-head"><h2>Membership</h2><p>No lock-in. Cancel anytime. First session is on us.</p></div>
+    <div class="price">
+      <div class="tier"><div class="n">Classes</div><div class="amt">€89<small>/mo</small></div><ul><li>Unlimited conditioning classes</li><li>Open-gym access</li><li>App &amp; tracking</li></ul><a href="#join" class="btn">Start</a></div>
+      <div class="tier hot"><div class="n" style="color:var(--accent)">Strength</div><div class="amt">€129<small>/mo</small></div><ul><li>Everything in Classes</li><li>Small-group strength</li><li>Monthly check-in</li></ul><a href="#join" class="btn">Start</a></div>
+      <div class="tier"><div class="n">1:1</div><div class="amt">€260<small>/mo</small></div><ul><li>Private coaching, 2×/week</li><li>Bespoke programming</li><li>Nutrition guidance</li></ul><a href="#join" class="btn">Start</a></div>
+    </div>
+  </div></section>
+
+  <section class="cta-band"><div class="wrap"><h2>Your first session is free.</h2><p>Come in, meet a coach, lift something. No pressure.</p><a href="#join" class="btn">Book free trial →</a></div></section>
+</main>
+<footer><div class="wrap foot-in">
+  <span class="brand disp">FORGE</span><span>Gürtel 40 · 1150 Wien · Open 6–22</span><span>© 2026 FORGE — a demo by ORDÉ</span>
+</div></footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('tb'),i=document.getElementById('ti'),K='forge-t';
+var sun='<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/>';var moon='<path d="M20 14.5A7.5 7.5 0 019.5 4 7.5 7.5 0 1020 14.5Z"/>';
+function res(){return r.getAttribute('data-theme')||'dark';}function pa(){i.innerHTML=res()==='dark'?moon:sun;}
+try{var s=localStorage.getItem(K);if(s)r.setAttribute('data-theme',s);}catch(e){}pa();
+b.onclick=function(){var n=res()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem(K,n);}catch(e){}pa();};
+requestAnimationFrame(function(){requestAnimationFrame(function(){document.body.classList.add('on');});});})();
+</script>
