@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LEINWERK — Handgemachte Leinenmode von Marlen Voss</title>
+  <meta name="description" content="LEINWERK: minimalistische Leinen- und Naturfasermode, in Einzelanfertigung von Hand genäht. Teile ansehen und unverbindlich anfragen.">
+  <meta name="theme-color" content="#F4EFE6">
+
+  <!-- Bild-Vorschau für Social (Instagram/Link-Teilen) -->
+  <meta property="og:title" content="LEINWERK — Handgemachte Leinenmode">
+  <meta property="og:description" content="Minimalistische Leinenmode in Einzelanfertigung. Ansehen und anfragen.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero.jpg">
+
+  <link rel="preload" href="fonts/fraunces-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/hanken-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#kollektion">Zum Inhalt springen</a>
+
+  <!-- ===== Kopfzeile / Navigation ===== -->
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="LEINWERK – zur Startseite">
+        LEINWERK<small>Leinenmode · Handarbeit</small>
+      </a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="#kollektion">Kollektion</a>
+        <a href="#ueber">Über mich</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="btn nav-cta" href="#kontakt">Anfragen</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===== Hero ===== -->
+    <section class="hero" aria-label="Willkommen">
+      <div class="hero-media">
+        <picture>
+          <source srcset="images/hero.webp" type="image/webp">
+          <img src="images/hero.jpg" alt="Ruhig arrangierte Leinenkleidung an einer Kleiderstange im Atelier"
+               width="1600" height="1100" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+      <div class="hero-copy wrap">
+        <p class="eyebrow">Einzelstücke aus Leinen · Handgenäht</p>
+        <h1>LEINWERK</h1>
+        <p class="lead">Kleidung, die in Ruhe entsteht — jedes Teil einmalig, von Marlen Voss von Hand genäht.</p>
+      </div>
+    </section>
+
+    <!-- ===== Kollektion ===== -->
+    <section id="kollektion">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Die Kollektion</p>
+          <h2>Aktuelle Teile</h2>
+          <p>Jedes Stück ist ein Unikat und in der angegebenen Größe verfügbar. Tipp auf ein Teil zeigt Details, Material und Pflege — und wie du es anfragen kannst.</p>
+        </div>
+
+        <!-- Karten werden aus products.js erzeugt -->
+        <div class="grid" id="collection-grid"></div>
+
+        <p class="price-note" id="preis-hinweis">
+          Alle Preise sind Endpreise. <span id="versand-hinweis"></span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Über mich ===== -->
+    <section id="ueber" class="section-alt">
+      <div class="wrap about-grid">
+        <div class="about-photo">
+          <picture>
+            <source srcset="images/portrait.webp" type="image/webp">
+            <img src="images/portrait.jpg" alt="Porträt der Schneiderin Marlen Voss in ihrem Atelier"
+                 width="800" height="1000" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="about-text">
+          <p class="eyebrow">Über mich</p>
+          <h2>Handarbeit, in Ruhe</h2>
+          <p>Ich bin Marlen Voss und nähe seit über zwölf Jahren Kleidung aus Leinen und anderen Naturfasern. Angefangen habe ich mit Stücken für mich selbst — heute entstehen sie in meinem kleinen Atelier für Frauen, die klare, langlebige Kleidung suchen.</p>
+          <p>Ich arbeite mit vorgewaschenen Stoffen, nähe jedes Teil einzeln und achte auf saubere Innenverarbeitung. Kein Teil wird doppelt gefertigt, außer du wünschst es dir. Wenn dir eine Größe oder ein Detail nicht passt, sprechen wir darüber — vieles lässt sich anpassen.</p>
+          <p class="about-sign">— Marlen</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Ablauf ===== -->
+    <section id="ablauf">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">So läuft es ab</p>
+          <h2>In drei Schritten zu deinem Teil</h2>
+          <p>Es gibt keinen Warenkorb und keine Kasse. Statt anonym zu bestellen, schreiben wir kurz miteinander — so passt am Ende alles.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="num serif"> · Anfrage</span>
+            <h3>Du fragst an</h3>
+            <p>Du wählst ein Teil und schickst mir über das Formular oder per WhatsApp eine kurze Nachricht — Größe, Fragen, Wünsche.</p>
+          </article>
+          <article class="step">
+            <span class="num serif"> · Absprache</span>
+            <h3>Wir klären Details</h3>
+            <p>Ich melde mich meist innerhalb von ein bis zwei Tagen. Wir klären Verfügbarkeit, Maße, mögliche Anpassungen und den Preis inkl. Versand.</p>
+          </article>
+          <article class="step">
+            <span class="num serif"> · Fertigung</span>
+            <h3>Fertigung &amp; Versand</h3>
+            <p>Ist alles besprochen, reserviere oder nähe ich dein Teil und schicke es dir zu. Bezahlt wird per Überweisung nach Absprache.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Kontakt ===== -->
+    <section id="kontakt" class="section-alt">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Kontakt</p>
+          <h2>Ein Teil anfragen</h2>
+          <p>Schreib mir gern zu einem bestimmten Stück oder mit einer allgemeinen Frage. Unverbindlich — eine Anfrage ist noch keine Bestellung.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Formular -->
+          <div>
+            <form id="anfrage-form" class="form" novalidate>
+              <!-- Honeypot gegen Spam (für Menschen unsichtbar) -->
+              <div class="hp" aria-hidden="true">
+                <label>Bitte dieses Feld frei lassen
+                  <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+                </label>
+              </div>
+
+              <div class="field">
+                <label for="f-name">Name</label>
+                <input type="text" id="f-name" name="name" autocomplete="name" required>
+                <span class="error" id="f-name-error" aria-live="polite"></span>
+              </div>
+
+              <div class="field">
+                <label for="f-email">E-Mail</label>
+                <input type="email" id="f-email" name="email" autocomplete="email" required>
+                <span class="error" id="f-email-error" aria-live="polite"></span>
+              </div>
+
+              <div class="field">
+                <label for="f-telefon">Telefon <span class="opt">(optional)</span></label>
+                <input type="tel" id="f-telefon" name="telefon" autocomplete="tel">
+                <span class="error" id="f-telefon-error" aria-live="polite"></span>
+              </div>
+
+              <div class="field">
+                <label for="f-nachricht">Nachricht</label>
+                <textarea id="f-nachricht" name="nachricht" required
+                          placeholder="Worum geht es? Zu welchem Teil oder welcher Größe hast du eine Frage?"></textarea>
+                <span class="error" id="f-nachricht-error" aria-live="polite"></span>
+              </div>
+
+              <div class="field check">
+                <input type="checkbox" id="f-dsgvo" name="dsgvo" required>
+                <label for="f-dsgvo" class="check-label">
+                  Ich habe die <a class="textlink" href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>
+                  gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden.
+                </label>
+                <span class="error" id="f-dsgvo-error" aria-live="polite"></span>
+              </div>
+
+              <div>
+                <button type="submit" class="btn btn--solid">Anfrage senden</button>
+              </div>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
+
+            <!-- Erfolgs-State (ohne Seitenreload) -->
+            <div class="form-success" id="form-success" role="status">
+              <h3 class="serif">Danke für deine Anfrage.</h3>
+              <p>Ich habe deine Nachricht erhalten und melde mich in der Regel innerhalb von ein bis zwei Tagen bei dir.</p>
+            </div>
+          </div>
+
+          <!-- Weitere Wege -->
+          <aside class="contact-aside" aria-label="Weitere Kontaktwege">
+            <div class="aside-block">
+              <h3>WhatsApp</h3>
+              <p>Lieber kurz und direkt? Schreib mir über WhatsApp — auch mit Foto, falls du etwas Ähnliches im Kopf hast.</p>
+              <a class="wa textlink" id="wa-link" href="#" target="_blank" rel="noopener">Chat öffnen</a>
+            </div>
+            <div class="aside-block">
+              <h3>Instagram</h3>
+              <p>Neue Teile und Einblicke ins Atelier zeige ich zuerst hier.</p>
+              <a class="textlink" href="https://instagram.com/leinwerk.atelier" target="_blank" rel="noopener">@leinwerk.atelier</a>
+            </div>
+            <div class="aside-block">
+              <h3>E-Mail</h3>
+              <p>Ganz klassisch geht natürlich auch.</p>
+              <a class="textlink" href="mailto:hallo@leinwerk-atelier.de">hallo@leinwerk-atelier.de</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="wrap footer-in">
+      <div>
+        <div class="brand serif">LEINWERK</div>
+        <p style="color:var(--ink-soft); font-size:.85rem; margin-top:.3rem;">Handgemachte Leinenmode · Marlen Voss</p>
+      </div>
+      <nav class="footer-links" aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="widerruf.html">Widerruf</a>
+        <a href="agb.html">AGB</a>
+      </nav>
+      <p class="footer-legal">© <span id="year">2026</span> LEINWERK · Marlen Voss. Kleinunternehmerin gemäß § 19 UStG — im ausgewiesenen Preis ist keine Umsatzsteuer enthalten.</p>
+    </div>
+  </footer>
+
+  <!-- ===== Detail-Lightbox ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" aria-hidden="true">
+    <div class="lb-dialog">
+      <div class="lb-gallery">
+        <button type="button" class="lb-close" id="lb-close" aria-label="Ansicht schließen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <div id="lb-gallery"></div>
+        <div class="lb-thumbs" id="lb-thumbs"></div>
+      </div>
+      <div class="lb-info">
+        <h3 id="lb-title" class="serif"></h3>
+        <p class="lb-price" id="lb-price"></p>
+        <p class="lb-desc" id="lb-desc"></p>
+        <ul class="lb-specs" id="lb-specs"></ul>
+        <div class="lb-actions" id="lb-actions"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Versandhinweis & WhatsApp-Basislink aus den Daten setzen
+    (function () {
+      var vh = document.getElementById("versand-hinweis");
+      if (vh && typeof VERSANDHINWEIS === "string") vh.textContent = VERSANDHINWEIS;
+      var wa = document.getElementById("wa-link");
+      if (wa) wa.href = "https://wa.me/49XXXXXXXXXX?text=" +
+        encodeURIComponent("Hallo Marlen, ich habe eine Frage zu einem Teil — ");
+    })();
+  </script>
+</body>
+</html>
