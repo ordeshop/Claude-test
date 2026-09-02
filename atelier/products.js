@@ -30,7 +30,7 @@ const PRODUCTS = [
   {
     id: "leinenkleid-oat",
     titel: "Leinenkleid „Hafer“",
-    bilder: ["images/placeholder-1", "images/placeholder-4"],
+    bilder: ["images/produkt-leinenkleid-oat"],
     preis: 189,
     groesse: "36 / S",
     material: "100 % Leinen, vorgewaschen",
@@ -42,7 +42,7 @@ const PRODUCTS = [
   {
     id: "hemdbluse-natur",
     titel: "Hemdbluse „Natur“",
-    bilder: ["images/placeholder-2"],
+    bilder: ["images/produkt-hemdbluse-natur"],
     preis: 129,
     groesse: "38 / M",
     material: "Leinen-Baumwoll-Mix, ungefärbt",
@@ -54,7 +54,7 @@ const PRODUCTS = [
   {
     id: "leinenrock-lehm",
     titel: "Wickelrock „Lehm“",
-    bilder: ["images/placeholder-3", "images/placeholder-6"],
+    bilder: ["images/produkt-leinenrock-lehm"],
     preis: 145,
     groesse: "34–40 (Wickelform)",
     material: "100 % Leinen, pflanzengefärbt",
