@@ -66,7 +66,7 @@ const PRODUCTS = [
   {
     id: "leinenjacke-stein",
     titel: "Sommerjacke „Stein“",
-    bilder: ["images/placeholder-4"],
+    bilder: ["images/produkt-leinenjacke-stein"],
     preis: 235,
     groesse: "38 / M",
     material: "Grobes Leinen, ungefüttert",
@@ -78,7 +78,7 @@ const PRODUCTS = [
   {
     id: "leinenhose-asche",
     titel: "Weite Hose „Asche“",
-    bilder: ["images/placeholder-5"],
+    bilder: ["images/produkt-leinenhose-asche"],
     preis: 159,
     groesse: "S–M (Gummibund)",
     material: "Leinen, mittelschwer",
@@ -90,7 +90,7 @@ const PRODUCTS = [
   {
     id: "leinenkleid-abend",
     titel: "Langes Kleid „Abend“",
-    bilder: ["images/placeholder-6", "images/placeholder-1"],
+    bilder: ["images/produkt-leinenkleid-abend"],
     preis: 265,
     groesse: "36 / S",
     material: "Feines Leinen, halbtransparent",
@@ -102,7 +102,7 @@ const PRODUCTS = [
   {
     id: "schuerzenkleid",
     titel: "Schürzenkleid „Werkstatt“",
-    bilder: ["images/placeholder-1"],
+    bilder: ["images/produkt-schuerzenkleid"],
     preis: 139,
     groesse: "Einheitsgröße",
     material: "Schwerer Leinen-Drell",
@@ -114,7 +114,7 @@ const PRODUCTS = [
   {
     id: "leinenbluse-kragen",
     titel: "Bluse „Stehkragen“",
-    bilder: ["images/placeholder-2", "images/placeholder-5"],
+    bilder: ["images/produkt-leinenbluse-kragen"],
     preis: 135,
     groesse: "40 / L",
     material: "100 % Leinen",
