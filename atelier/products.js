@@ -42,7 +42,7 @@ const PRODUCTS = [
   {
     id: "hemdbluse-natur",
     titel: "Hemdbluse „Natur“",
-    bilder: ["images/produkt-hemdbluse-natur"],
+    bilder: ["images/produkt-hemdbluse-natur", "images/detail-knopf"],
     preis: 129,
     groesse: "38 / M",
     material: "Leinen-Baumwoll-Mix, ungefärbt",
@@ -114,7 +114,7 @@ const PRODUCTS = [
   {
     id: "leinenbluse-kragen",
     titel: "Bluse „Stehkragen“",
-    bilder: ["images/produkt-leinenbluse-kragen"],
+    bilder: ["images/produkt-leinenbluse-kragen", "images/detail-knopf"],
     preis: 135,
     groesse: "40 / L",
     material: "100 % Leinen",
@@ -126,7 +126,7 @@ const PRODUCTS = [
   {
     id: "leinentop-traeger",
     titel: "Trägertop „Sommer“",
-    bilder: ["images/placeholder-3"],
+    bilder: ["images/produkt-leinentop-traeger"],
     preis: 89,
     groesse: "36–38",
     material: "Leinenjersey, weich",
@@ -138,7 +138,7 @@ const PRODUCTS = [
   {
     id: "leinenmantel-lang",
     titel: "Leichter Mantel „Allee“",
-    bilder: ["images/placeholder-4", "images/placeholder-6"],
+    bilder: ["images/produkt-leinenmantel-lang"],
     preis: 289,
     groesse: "38 / M",
     material: "Doppelt gewebtes Leinen",
@@ -150,7 +150,7 @@ const PRODUCTS = [
   {
     id: "leinenkleid-tunika",
     titel: "Tunikakleid „Feld“",
-    bilder: ["images/placeholder-5", "images/placeholder-2"],
+    bilder: ["images/produkt-leinenkleid-tunika"],
     preis: 155,
     groesse: "38–40",
     material: "Leinen, pflanzengefärbt (Krapp)",
@@ -162,7 +162,7 @@ const PRODUCTS = [
   {
     id: "leinenschal",
     titel: "Tuch „Randstreifen“",
-    bilder: ["images/placeholder-6"],
+    bilder: ["images/produkt-leinenschal"],
     preis: 59,
     groesse: "180 × 55 cm",
     material: "Feines Leinen, handgesäumt",
