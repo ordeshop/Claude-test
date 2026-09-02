@@ -30,7 +30,7 @@ const PRODUCTS = [
   {
     id: "leinenkleid-oat",
     titel: "Leinenkleid „Hafer“",
-    bilder: ["images/produkt-leinenkleid-oat"],
+    bilder: ["images/produkt-leinenkleid-oat", "images/detail-saum"],
     preis: 189,
     groesse: "36 / S",
     material: "100 % Leinen, vorgewaschen",
@@ -162,7 +162,7 @@ const PRODUCTS = [
   {
     id: "leinenschal",
     titel: "Tuch „Randstreifen“",
-    bilder: ["images/produkt-leinenschal"],
+    bilder: ["images/produkt-leinenschal", "images/detail-saum"],
     preis: 59,
     groesse: "180 × 55 cm",
     material: "Feines Leinen, handgesäumt",
