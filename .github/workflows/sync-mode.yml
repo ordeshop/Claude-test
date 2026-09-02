@@ -1,0 +1,26 @@
+name: Sync mode with main
+
+# Hält die Branch "mode" automatisch mit "main" synchron:
+# bei jedem Push auf main wird mode auf denselben Stand gebracht.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:   # erlaubt manuelles Auslösen
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-mode
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main (volle Historie)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: mode auf main-Stand bringen
+        run: git push origin HEAD:mode --force
