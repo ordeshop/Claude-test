@@ -5,6 +5,19 @@ kein Build-Step. Bilder als WebP + JPG (4:5, Hero 16:9), Fonts lokal (DSGVO).
 
 ## Gelernte Fehler — bitte NICHT wiederholen
 
+### 0. Erst den Ist-Zustand prüfen, bevor man „gibt es nicht" sagt
+**Symptom:** Ich behauptete mehrfach, in Shopify liege nichts von den Demos — dabei
+existierten dort längst eine Referenzseite (`/pages/web-design`) und Branchenseiten
+(`/pages/website-fitnessstudio` etc.), die jeweils ihre Demo einbetten.
+**Regel:** Bevor man dem Nutzer sagt „das ist nicht vorhanden / nicht möglich", erst
+mit den vorhandenen Tools nachsehen (hier: Shopify `pages`-Query). Nichts über den
+Zustand externer Systeme aus dem Gedächtnis behaupten.
+**Muster der ORDÉ-Demos:** Jede Demo lebt statisch im Repo unter `atelier/` bzw.
+`salon/`, `cafe/` … und wird über GitHub Pages (`https://ordeshop.github.io/Claude-test/<demo>/`)
+ausgeliefert. In Shopify wird sie als HTML-Card verlinkt — Thumbnail unter
+`…/assets/thumb-<demo>.jpg` (16:10). Neue Demo = (a) Ordner + Showcase-Card im Repo,
+(b) Card auf `/pages/web-design`, (c) eigene Branchenseite `/pages/website-<branche>`.
+
 ### 1. `<img>`-Attribute `width`/`height` heben CSS `aspect-ratio` aus
 **Symptom:** Beim Klick auf ein Produkt wurde das Lightbox-Bild verzerrt/zu hoch
 (gemessen 493×1000 statt 493×617) und Thumbnails rutschten aus dem Sichtfeld.
