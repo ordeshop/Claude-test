@@ -1,0 +1,60 @@
+name: Website hochladen
+
+# Laedt den Inhalt von website/site/ per FTP zu Hostinger.
+#
+# Laeuft nur, wenn sich unter website/ wirklich etwas geaendert hat -
+# Aenderungen am Plugin oder an den alten Demos loesen nichts aus.
+#
+# Vorher einrichten unter Settings -> Secrets and variables -> Actions:
+#   FTP_SERVER     Serveradresse von Hostinger
+#   FTP_USERNAME   FTP-Benutzername
+#   FTP_PASSWORD   FTP-Passwort
+#
+# Solange die Secrets fehlen, bricht der Lauf mit einem Hinweis ab,
+# statt mit einer unverstaendlichen Fehlermeldung.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'website/**'
+      - '.github/workflows/website-hochladen.yml'
+  workflow_dispatch:   # erlaubt zusaetzlich den Start per Knopfdruck
+
+concurrency:
+  group: website-hochladen
+  cancel-in-progress: false
+
+jobs:
+  hochladen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dateien holen
+        uses: actions/checkout@v4
+
+      - name: Pruefen, ob die Zugangsdaten hinterlegt sind
+        run: |
+          if [ -z "${{ secrets.FTP_SERVER }}" ]; then
+            echo "::error::FTP_SERVER ist nicht gesetzt. Die Zugangsdaten muessen unter Settings -> Secrets and variables -> Actions als FTP_SERVER, FTP_USERNAME und FTP_PASSWORD hinterlegt werden."
+            exit 1
+          fi
+
+      - name: Seite neu bauen
+        run: |
+          cd website
+          python3 build.py
+
+      - name: Per FTP zu Hostinger laden
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./website/site/
+          server-dir: ./public_html/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/*.md

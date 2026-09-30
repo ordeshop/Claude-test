@@ -1,0 +1,30 @@
+# Betriebssystem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editoren
+.vscode/
+.idea/
+*.swp
+
+# Pakete und Zwischenstaende
+*.zip
+!account-backup/zips/*.zip
+/tmp/
+*.log
+*.bak
+*.orig
+
+# Zugangsdaten gehoeren in GitHub Secrets, nicht hierher
+.env
+.env.*
+*.pem
+*.key
+ftp-*.txt

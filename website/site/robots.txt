@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Beispielseiten sind Demos, keine eigenstaendigen Inhalte
+Disallow: /demos/
+
+Sitemap: https://ordeshop.net/sitemap.xml
