@@ -308,7 +308,7 @@ def demo_card(b, big=False):
     return f"""<article class="{cls} reveal">
   <div class="browserbar"><span></span><span></span><span></span><em>{b['demo_host']}</em></div>
   <a class="screen" href="{b['demo']}" aria-label="Demo {b['demo_name']} &ouml;ffnen">
-    <img src="assets/vorschau/{slug}.webp" alt="Vorschau der Beispielseite {b['demo_name']}" width="1100" height="705" loading="lazy" decoding="async">
+    <img src="demos/vorschau/{slug}.webp" alt="Vorschau der Beispielseite {b['demo_name']}" width="1100" height="705" loading="lazy" decoding="async">
   </a>
   <div class="demometa">
     <span class="demo-kicker">{b['short']}</span>
@@ -328,7 +328,7 @@ def phone_mockup():
         active = " is-active" if i == 0 else ""
         laden = "eager" if i == 0 else "lazy"
         slides += (f'<img class="pslide{active}" data-label="{b["demo_name"]} &middot; {b["short"]}" '
-                   f'src="assets/vorschau/{slug}-handy.webp" alt="" width="640" height="1313" '
+                   f'src="demos/vorschau/{slug}-handy.webp" alt="" width="640" height="1313" '
                    f'loading="{laden}" decoding="async">')
     return f"""<div class="phone" aria-hidden="true">
   <div class="phone-frame">
@@ -483,17 +483,22 @@ if fehlend:
     print("HINWEIS: %d Schriftdatei(en) fehlen noch, die Seite nutzt vorlaeufig "
           "Systemschriften. Siehe unterlagen/SCHRIFTEN.md" % len(fehlend))
 
-# Handgemachte Ordner mitkopieren: die Demos, ihre Vorschaubilder und das
-# Markenmaterial. Sie liegen in 'quelle', damit 'site' jederzeit komplett
-# neu erzeugt werden kann.
-for quell_name, ziel_pfad in (("demos",    os.path.join(OUT, "demos")),
-                              ("vorschau", os.path.join(OUT, "assets", "vorschau")),
-                              ("marke",    os.path.join(OUT, "assets", "marke"))):
-    quell_pfad = os.path.join(QUELLE, quell_name)
-    if not os.path.isdir(quell_pfad):
-        print("ACHTUNG: Ordner %s fehlt" % quell_pfad)
-        continue
-    shutil.copytree(quell_pfad, ziel_pfad, dirs_exist_ok=True)
+# Markenmaterial mitkopieren (Logo, Favicons, Teilen-Bild).
+marke_quelle = os.path.join(QUELLE, "marke")
+if os.path.isdir(marke_quelle):
+    shutil.copytree(marke_quelle, os.path.join(OUT, "assets", "marke"),
+                    dirs_exist_ok=True)
+else:
+    print("ACHTUNG: Ordner %s fehlt" % marke_quelle)
+
+# Die Beispielseiten liegen im eigenen Projekt 'orde-demos' und werden dort
+# gebaut und hochgeladen. Auf dem Server landen sie unter /demos/.
+# Hier wird nur geprueft, ob die Startseite ins Leere zeigen wuerde.
+if not os.path.isdir(os.path.join(OUT, "demos")):
+    print("HINWEIS: Der Ordner site/demos fehlt hier - das ist richtig so. "
+          "Die Beispielseiten kommen aus dem Projekt 'orde-demos' und werden "
+          "getrennt hochgeladen. Nur in der oertlichen Vorschau fehlen dann "
+          "die Vorschaubilder.")
 
 # Startseite
 index_body = f"""

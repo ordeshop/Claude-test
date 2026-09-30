@@ -8,6 +8,7 @@ zu tun und werden unabhängig voneinander geändert.
 | [`website/`](website/) | **Die ORDÉ-Website.** Das aktuelle Projekt. | in Arbeit |
 | `plugins/`, `.claude-plugin/` | Das Claude-Code-Plugin „orde-design" mit 34 Skills | fertig, wird genutzt |
 | `account-backup/` | Sicherung der eigenen Skills beim Account-Umzug | Archiv |
+| [`umzug-in-eigene-repos/`](umzug-in-eigene-repos/) | **Zwischenlager** — Demos und Kundenvorlage warten auf eigene Repos | zieht aus |
 | `index.html`, `cafe/`, `salon/`, `fitness/`, `komla/`, `atelier/`, `assets/` | Die alten Demo-Seiten, noch auf Englisch | wird ersetzt |
 
 ## 1. Die ORDÉ-Website
@@ -18,6 +19,9 @@ Kurz: `cd website && python3 build.py`, dann den Inhalt von `website/site/`
 per FTP hochladen. Gehostet wird bei Hostinger.
 
 Das ist der Ordner, in dem gearbeitet wird.
+
+Die Beispielseiten stecken **nicht** mehr darin — die liegen getrennt unter
+`umzug-in-eigene-repos/orde-demos/` und landen auf dem Server unter `/demos/`.
 
 ## 2. Das Plugin „orde-design"
 
