@@ -10,8 +10,9 @@ name: Website hochladen
 #   FTP_USERNAME   FTP-Benutzername
 #   FTP_PASSWORD   FTP-Passwort
 #
-# Solange die Secrets fehlen, bricht der Lauf mit einem Hinweis ab,
-# statt mit einer unverstaendlichen Fehlermeldung.
+# Solange die Secrets fehlen, ueberspringt der Lauf das Hochladen mit einem
+# Hinweis - er schlaegt nicht fehl. So kommen keine Fehlermails, bevor das
+# Hosting ueberhaupt gebucht ist.
 
 on:
   push:
@@ -33,10 +34,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Pruefen, ob die Zugangsdaten hinterlegt sind
+        id: pruefung
         run: |
           if [ -z "${{ secrets.FTP_SERVER }}" ]; then
-            echo "::error::FTP_SERVER ist nicht gesetzt. Die Zugangsdaten muessen unter Settings -> Secrets and variables -> Actions als FTP_SERVER, FTP_USERNAME und FTP_PASSWORD hinterlegt werden."
-            exit 1
+            echo "bereit=nein" >> "$GITHUB_OUTPUT"
+            echo "::notice::Hochladen uebersprungen - FTP_SERVER ist noch nicht gesetzt. Sobald das Hosting gebucht ist, FTP_SERVER, FTP_USERNAME und FTP_PASSWORD unter Settings -> Secrets and variables -> Actions hinterlegen. Danach laeuft das hier von selbst."
+          else
+            echo "bereit=ja" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Seite neu bauen
@@ -45,6 +49,7 @@ jobs:
           python3 build.py
 
       - name: Per FTP zu Hostinger laden
+        if: steps.pruefung.outputs.bereit == 'ja'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
