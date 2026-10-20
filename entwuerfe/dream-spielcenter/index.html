@@ -3,253 +3,347 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dream Spielcenter Kaufering</title>
-<meta name="description" content="Dream Spielcenter in Kaufering – moderne Spielhalle an der Viktor-Frankl-Straße. Öffnungszeiten, Anfahrt und Spielerschutz.">
+<title>Dream Spielcenter – Willkommen im Dream</title>
+<meta name="description" content="Dream Spielcenter: große Auswahl an Geldgewinnspiel- und Unterhaltungsgeräten. Standorte, Öffnungszeiten, Kontakt und Jobs.">
 <meta name="robots" content="noindex, nofollow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Schriften und Icons liegen lokal (DSGVO: keine Anfragen an Google oder CDNs) -->
+<link rel="preload" href="assets/fonts/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/icons/tabler-icons.min.css">
 <style>
+  @font-face{font-family:"Barlow Condensed";font-weight:500;font-display:swap;src:url(assets/fonts/barlow-condensed-latin-500-normal.woff2) format("woff2")}
+  @font-face{font-family:"Barlow Condensed";font-weight:700;font-display:swap;src:url(assets/fonts/barlow-condensed-latin-700-normal.woff2) format("woff2")}
+  @font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url(assets/fonts/barlow-condensed-latin-800-normal.woff2) format("woff2")}
+  @font-face{font-family:"Barlow Condensed";font-weight:800;font-style:italic;font-display:swap;src:url(assets/fonts/barlow-condensed-latin-800-italic.woff2) format("woff2")}
+  @font-face{font-family:"Barlow";font-weight:400;font-display:swap;src:url(assets/fonts/barlow-latin-400-normal.woff2) format("woff2")}
+  @font-face{font-family:"Barlow";font-weight:500;font-display:swap;src:url(assets/fonts/barlow-latin-500-normal.woff2) format("woff2")}
+  @font-face{font-family:"Barlow";font-weight:600;font-display:swap;src:url(assets/fonts/barlow-latin-600-normal.woff2) format("woff2")}
+  @font-face{font-family:"Lobster";font-weight:400;font-display:swap;src:url(assets/fonts/lobster-latin-400-normal.woff2) format("woff2")}
+
   :root{
-    --ink:#0b0d1a;
-    --ink-2:#12152a;
-    --ink-3:#1b1f3a;
-    --line:rgba(236,226,206,.12);
-    --text:#ece2ce;
-    --muted:#b3ab9b;
-    --gold:#e2b866;
-    --gold-soft:rgba(226,184,102,.14);
-    --rose:#e0789a;
-    --ok:#7fd1a5;
-    --ease:cubic-bezier(.32,.72,0,1);
-    --serif:"Fraunces",Georgia,serif;
-    --sans:"Space Grotesk",system-ui,sans-serif;
+    --black:#050505;
+    --coal:#0e0e0f;
+    --steel:#18181b;
+    --line:#2a2a2e;
+    --white:#ffffff;
+    --text:#e9e7e4;
+    --muted:#a4a19c;
+    --red:#e3171b;
+    --orange:#f6731f;
+    --yellow:#ffc928;
+    --brand:linear-gradient(90deg,var(--red) 0%,var(--orange) 55%,var(--yellow) 100%);
+    --display:"Barlow Condensed",Impact,sans-serif;
+    --body:"Barlow",system-ui,sans-serif;
+    --ease:cubic-bezier(.2,.8,.2,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--ink);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  a{color:inherit}
+  html{scroll-behavior:smooth;scroll-padding-top:90px}
+  body{background:var(--black);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
   img,svg{display:block;max-width:100%}
-  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
-  .wrap{width:min(1180px,100% - 32px);margin-inline:auto}
-  .skip{position:absolute;left:-9999px;top:8px;background:var(--gold);color:var(--ink);padding:10px 16px;border-radius:999px;z-index:30}
+  :focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+  .wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .skip{position:absolute;left:-9999px;top:8px;z-index:99;background:var(--yellow);color:#000;padding:10px 16px;font-weight:600}
   .skip:focus{left:16px}
+  .ti{font-size:1.25em;line-height:1}
 
-  /* Entwurfs-Hinweis */
-  .draft{background:var(--gold);color:var(--ink);font-size:13px;font-weight:500;text-align:center;padding:8px 16px}
+  .draft{background:#000;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center;padding:7px 16px}
+  .draft b{color:var(--yellow);font-weight:600}
 
-  /* Nav */
-  .nav{position:sticky;top:14px;z-index:20;margin-top:14px}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 8px 8px 22px;border:1px solid var(--line);border-radius:999px;background:rgba(11,13,26,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-  .logo{font-family:var(--serif);font-size:22px;font-weight:500;text-decoration:none;letter-spacing:.01em;display:flex;align-items:baseline;gap:8px}
-  .logo i{font-style:italic;font-weight:300;color:var(--gold)}
-  .nav ul{display:flex;gap:4px;list-style:none}
-  .nav ul a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;text-decoration:none;font-size:15px;color:var(--muted);transition:color .4s var(--ease),background .4s var(--ease)}
-  .nav ul a:hover{color:var(--text);background:rgba(236,226,206,.06)}
-  .age{display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:44px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);font-weight:600;font-size:14px}
+  /* ---------- Header ---------- */
+  .top{position:sticky;top:0;z-index:40;background:rgba(5,5,5,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .top::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--brand);transform:scaleX(var(--p,0));transform-origin:left}
+  .top-in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+  .logo{display:block;width:150px}
+  .menu{display:flex;align-items:center;gap:6px;list-style:none}
+  .menu a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);transition:color .25s}
+  .menu a:hover,.menu a[aria-current]{color:var(--white)}
+  .menu .cta-s{margin-left:10px;color:#000;background:var(--brand);padding:0 22px}
+  .menu .cta-s:hover{color:#000;filter:brightness(1.08)}
+  .burger{display:none;width:48px;height:48px;background:none;border:0;color:var(--white);cursor:pointer;position:relative}
+  .burger span{position:absolute;left:12px;right:12px;height:3px;background:var(--brand);transition:transform .35s var(--ease),opacity .2s}
+  .burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:23px}.burger span:nth-child(3){top:31px}
+  .burger[aria-expanded=true] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .burger[aria-expanded=true] span:nth-child(2){opacity:0}
+  .burger[aria-expanded=true] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
-  /* Hero */
-  .hero{position:relative;padding:96px 0 120px;isolation:isolate}
-  .hero::before{content:"";position:absolute;inset:-160px 0 0;z-index:-1;
-    background:
-      radial-gradient(600px 380px at 78% 30%,rgba(224,120,154,.20),transparent 70%),
-      radial-gradient(520px 420px at 64% 62%,rgba(226,184,102,.16),transparent 70%)}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
-  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
-  .dot.open{background:var(--ok);box-shadow:0 0 0 4px rgba(127,209,165,.18)}
-  h1{font-family:var(--serif);font-weight:300;font-size:clamp(48px,8vw,104px);line-height:.95;letter-spacing:-.02em;margin:28px 0 28px}
-  h1 em{font-style:italic;color:var(--gold)}
-  .lead{max-width:30em;color:var(--muted);font-size:19px}
-  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
-  .btn{display:inline-flex;align-items:center;gap:14px;min-height:52px;padding:6px 8px 6px 24px;border-radius:999px;text-decoration:none;font-weight:500;transition:transform .5s var(--ease),background .5s var(--ease)}
-  .btn:active{transform:scale(.98)}
-  .btn-main{background:var(--gold);color:var(--ink)}
-  .btn-main .ic{background:rgba(11,13,26,.12)}
-  .btn-ghost{border:1px solid var(--line);padding-right:24px}
-  .btn-ghost:hover{background:rgba(236,226,206,.06)}
-  .ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;transition:transform .5s var(--ease)}
-  .btn:hover .ic{transform:translate(2px,-2px) scale(1.05)}
+  /* ---------- Hero ---------- */
+  .hero{position:relative;overflow:hidden;min-height:calc(100dvh - 110px);display:grid;align-items:center;padding:80px 0 120px;isolation:isolate}
+  .rays{position:absolute;inset:-40% -20% auto;height:180%;z-index:-2;opacity:.55;
+    background:repeating-conic-gradient(from 0deg at 50% 62%,rgba(227,23,27,.22) 0 6deg,transparent 6deg 15deg);
+    -webkit-mask:radial-gradient(closest-side at 50% 62%,#000 15%,transparent 85%);mask:radial-gradient(closest-side at 50% 62%,#000 15%,transparent 85%);
+    animation:turn 120s linear infinite}
+  @keyframes turn{to{transform:rotate(360deg)}}
+  .glow{position:absolute;left:50%;top:62%;width:900px;height:520px;translate:-50% -50%;z-index:-1;border-radius:50%;
+    background:radial-gradient(closest-side,rgba(246,115,31,.42),rgba(227,23,27,.18) 55%,transparent)}
+  .floor{position:absolute;left:0;right:0;bottom:0;height:38%;z-index:-1;
+    background:linear-gradient(to bottom,transparent,var(--black) 85%),
+      repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 80px),
+      repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 40px);
+    transform:perspective(500px) rotateX(55deg);transform-origin:bottom}
+  .hero-in{text-align:center}
+  .hero-logo{width:min(560px,86vw);margin:0 auto 18px;filter:drop-shadow(0 30px 60px rgba(227,23,27,.45))}
+  .hero h1{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(46px,8.4vw,120px);line-height:.9;letter-spacing:-.005em;color:var(--white)}
+  .hero h1 span{background:var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{max-width:38em;margin:22px auto 0;color:var(--muted);font-size:clamp(17px,1.6vw,20px)}
+  .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:38px}
+  .btn{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 30px;font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:.06em;text-transform:uppercase;transition:transform .25s var(--ease),filter .25s,background .25s;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%)}
+  .btn:active{transform:translateY(1px)}
+  .btn-brand{background:var(--brand);color:#000}
+  .btn-brand:hover{filter:brightness(1.1)}
+  .btn-line{background:var(--steel);color:var(--white);box-shadow:inset 0 0 0 1px var(--line)}
+  .btn-line:hover{background:#222226}
+  .badge-age{position:absolute;right:max(16px,calc(50% - 600px));bottom:48px;display:flex;align-items:center;gap:12px;color:var(--muted);font-size:14px;line-height:1.3}
+  .badge-age strong{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;border:2px solid var(--red);color:var(--white);font-family:var(--display);font-size:24px;font-weight:800}
 
-  /* Moon emblem */
-  .emblem{position:relative;aspect-ratio:1;max-width:440px;justify-self:end;width:100%}
-  .emblem .shell{position:absolute;inset:0;border-radius:50%;padding:10px;border:1px solid var(--line);background:rgba(236,226,206,.03)}
-  .emblem .core{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2a2f57,#12152a 70%);box-shadow:inset 0 1px 1px rgba(255,255,255,.12);display:grid;place-items:center;overflow:hidden}
-  .emblem svg{width:78%}
-  .orbit{position:absolute;inset:-18px;border-radius:50%;border:1px dashed rgba(226,184,102,.25);animation:spin 60s linear infinite}
-  .orbit::after{content:"";position:absolute;top:50%;left:-5px;width:10px;height:10px;border-radius:50%;background:var(--rose)}
-  @keyframes spin{to{transform:rotate(360deg)}}
+  /* ---------- Ticker ---------- */
+  .ticker{background:var(--brand);color:#000;overflow:hidden;transform:skewY(-2deg);margin:-20px 0 0}
+  .ticker-track{display:flex;width:max-content;animation:run 30s linear infinite;padding:14px 0}
+  .ticker span{font-family:var(--display);font-weight:800;font-style:italic;font-size:26px;text-transform:uppercase;letter-spacing:.04em;padding:0 28px;display:flex;align-items:center;gap:28px;white-space:nowrap}
+  .ticker span::after{content:"★";font-style:normal;font-size:18px}
+  @keyframes run{to{transform:translateX(-50%)}}
 
-  /* Strip */
-  .strip{border-block:1px solid var(--line);padding:22px 0;overflow:hidden}
-  .strip-track{display:flex;gap:48px;white-space:nowrap;font-family:var(--serif);font-style:italic;font-weight:300;font-size:26px;color:var(--muted);animation:marquee 40s linear infinite;width:max-content}
-  .strip-track span::after{content:"✦";font-style:normal;color:var(--gold);margin-left:48px;font-size:16px;vertical-align:middle}
-  @keyframes marquee{to{transform:translateX(-50%)}}
+  /* ---------- Sections ---------- */
+  section{padding:128px 0}
+  .kicker{display:flex;align-items:center;gap:14px;font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+  .kicker::before{content:"";width:40px;height:3px;background:var(--brand)}
+  h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(42px,6vw,84px);line-height:.92;color:var(--white)}
+  h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:28px;line-height:1;letter-spacing:.02em;color:var(--white)}
+  .head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:64px}
+  .head p{color:var(--muted);max-width:34em;justify-self:end}
 
-  section{padding:120px 0}
-  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
-  h2{font-family:var(--serif);font-weight:300;font-size:clamp(36px,5vw,60px);line-height:1.02;letter-spacing:-.015em}
-  h2 em{font-style:italic;color:var(--gold)}
-  .sec-head p{max-width:26em;color:var(--muted)}
-  h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15;margin-bottom:10px}
+  /* Angebot */
+  .offer{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .offer article{position:relative;padding:40px 32px 44px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;transition:background .35s}
+  .offer article::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--brand);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+  .offer article:hover{background:var(--coal)}
+  .offer article:hover::before{transform:scaleX(1)}
+  .offer i{font-size:44px;display:inline-block;background:var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:28px}
+  .offer h3{margin-bottom:12px}
+  .offer p{color:var(--muted);font-size:16px}
+  .todo{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--yellow);border:1px dashed rgba(255,201,40,.55);padding:2px 8px}
 
-  /* Bento */
-  .bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(220px,auto);gap:16px}
-  .card{grid-column:span 4;border:1px solid var(--line);border-radius:28px;padding:8px;background:rgba(236,226,206,.02)}
-  .card-in{height:100%;border-radius:21px;background:var(--ink-2);box-shadow:inset 0 1px 1px rgba(255,255,255,.06);padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
-  .card p{color:var(--muted)}
-  .card.big{grid-column:span 8;grid-row:span 2}
-  .card.big .card-in{background:radial-gradient(500px 300px at 85% 0%,rgba(226,184,102,.16),transparent 70%),var(--ink-2)}
-  .card.wide{grid-column:span 8}
-  .num{font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:var(--gold)}
-  .ph{display:inline-block;font-size:12px;letter-spacing:.06em;color:var(--ink);background:var(--gold);border-radius:999px;padding:2px 10px;margin-left:6px;vertical-align:middle;font-family:var(--sans);font-weight:500}
-  .big-visual{display:flex;gap:10px;align-items:flex-end;height:120px}
-  .big-visual i{flex:1;border-radius:14px 14px 4px 4px;background:linear-gradient(to top,var(--ink-3),rgba(226,184,102,.35))}
+  /* Standorte */
+  .locs{background:var(--coal);border-block:1px solid var(--line)}
+  .loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .loc{background:var(--black);border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .3s,transform .4s var(--ease)}
+  .loc:hover{border-color:#3d3d42;transform:translateY(-4px)}
+  .loc-img{aspect-ratio:16/10;position:relative;overflow:hidden;background:
+      radial-gradient(120% 90% at 50% 120%,rgba(246,115,31,.5),transparent 60%),
+      repeating-linear-gradient(90deg,#141416 0 46px,#0c0c0d 46px 92px)}
+  .loc-img .neon{position:absolute;inset:auto 0 26%;text-align:center;font-family:"Lobster",cursive;font-size:56px;color:#fff;text-shadow:0 0 6px #fff,0 0 18px var(--orange),0 0 40px var(--red)}
+  .loc-img .photo{position:absolute;left:12px;top:12px;font-size:12px;font-weight:600;color:var(--yellow);background:rgba(0,0,0,.7);padding:4px 8px}
+  .loc-body{padding:28px;display:flex;flex-direction:column;gap:18px;flex:1}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--muted)}
+  .status::before{content:"";width:9px;height:9px;border-radius:50%;background:#6b6b70}
+  .status.open{color:#7be3a2}.status.open::before{background:#38d27a;box-shadow:0 0 0 4px rgba(56,210,122,.18)}
+  .loc address{font-style:normal;color:var(--muted)}
+  .loc-links{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+  .loc-links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid var(--line);font-weight:600;font-size:15px;transition:background .25s,border-color .25s}
+  .loc-links a:hover{background:var(--steel);border-color:#3d3d42}
+  .loc.empty{border-style:dashed;justify-content:center;align-items:center;text-align:center;padding:40px;color:var(--muted);min-height:420px}
+  .loc.empty i{font-size:40px;color:var(--line);margin-bottom:14px}
 
-  /* Hours */
-  .hours{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-  .now{border:1px solid var(--line);border-radius:28px;padding:8px}
-  .now-in{border-radius:21px;background:var(--ink-2);padding:36px}
-  .now-status{font-family:var(--serif);font-size:44px;font-weight:300;line-height:1.05;margin:16px 0 8px}
-  .now-status em{font-style:italic;color:var(--gold)}
-  table{width:100%;border-collapse:collapse}
-  caption{text-align:left;color:var(--muted);font-size:14px;padding-bottom:12px}
-  th,td{padding:18px 4px;border-bottom:1px solid var(--line);text-align:left;font-weight:400}
-  td{text-align:right;font-variant-numeric:tabular-nums}
-  tr.today th,tr.today td{color:var(--gold)}
-  tr.today th::after{content:"heute";font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-left:10px;border:1px solid var(--gold);border-radius:999px;padding:1px 8px;vertical-align:middle}
+  /* Öffnungszeiten */
+  .hours{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
+  .clock{border:1px solid var(--line);padding:40px;position:relative;overflow:hidden}
+  .clock::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--brand)}
+  .clock .big{font-family:var(--display);font-weight:800;font-size:clamp(64px,9vw,120px);line-height:.85;color:var(--white);text-transform:uppercase;margin:18px 0 10px}
+  .clock .big span{background:var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .clock p{color:var(--muted)}
+  table{width:100%;border-collapse:collapse;font-size:18px}
+  caption{text-align:left;color:var(--muted);font-size:14px;padding-bottom:10px}
+  th,td{padding:20px 0;border-bottom:1px solid var(--line);font-weight:500;text-align:left}
+  td{text-align:right;font-variant-numeric:tabular-nums;color:var(--white);font-family:var(--display);font-size:24px;font-weight:700;letter-spacing:.03em}
+  tr.today th{color:var(--white)}
+  tr.today th::before{content:"";display:inline-block;width:10px;height:10px;margin-right:12px;background:var(--brand);vertical-align:1px}
+  tr.today td{color:var(--yellow)}
 
-  /* Location */
-  .loc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .map{border:1px solid var(--line);border-radius:28px;padding:8px;min-height:380px}
-  .map-in{height:100%;border-radius:21px;overflow:hidden;background:var(--ink-2);position:relative}
-  .map-in svg{width:100%;height:100%;position:absolute;inset:0}
-  .addr{display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:40px;border-radius:28px;background:var(--ink-2);border:1px solid var(--line)}
-  .addr address{font-style:normal;font-family:var(--serif);font-size:34px;font-weight:300;line-height:1.2}
-  .addr dl{display:grid;grid-template-columns:auto 1fr;gap:10px 24px;color:var(--muted)}
-  .addr dt{color:var(--text)}
+  /* Jobs */
+  .jobs{position:relative;overflow:hidden;background:var(--brand);color:#000}
+  .jobs::after{content:"JOBS";position:absolute;right:-2vw;bottom:-6vw;font-family:var(--display);font-weight:800;font-size:28vw;line-height:1;color:rgba(0,0,0,.08);pointer-events:none}
+  .jobs .kicker{color:#000}.jobs .kicker::before{background:#000}
+  .jobs h2{color:#000;max-width:11em}
+  .jobs-in{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center;position:relative;z-index:1}
+  .jobs ul{list-style:none;display:grid;gap:2px}
+  .jobs li{display:flex;justify-content:space-between;align-items:center;gap:16px;background:#000;color:var(--white);padding:22px 26px}
+  .jobs li span{color:var(--muted);font-size:15px}
+  .jobs li h3{font-size:24px}
+  .jobs p.lead{margin-top:22px;font-size:19px;max-width:30em;font-weight:500}
+  .btn-dark{background:#000;color:var(--white);margin-top:32px}
+  .btn-dark:hover{background:#1a1a1a}
+
+  /* Kontakt */
+  .contact{display:grid;grid-template-columns:5fr 7fr;gap:72px}
+  .channels{display:grid;gap:12px;margin-top:40px}
+  .channels a{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid var(--line);transition:background .25s}
+  .channels a:hover{background:var(--coal)}
+  .channels i{font-size:28px;color:var(--orange)}
+  .channels small{display:block;color:var(--muted);font-size:13px}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .field{display:grid;gap:8px}
+  .field.full{grid-column:1/-1}
+  label{font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text)}
+  input,select,textarea{font:inherit;color:var(--white);background:var(--coal);border:1px solid var(--line);padding:14px 16px;min-height:52px;border-radius:0;transition:border-color .25s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(246,115,31,.25)}
+  textarea{min-height:150px;resize:vertical}
+  .consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--muted)}
+  .consent input{min-height:auto;width:22px;height:22px;accent-color:var(--orange);margin-top:2px}
+  form .btn{grid-column:1/-1;justify-self:start;border:0;cursor:pointer}
 
   /* Spielerschutz */
-  .protect{background:var(--ink-2);border-block:1px solid var(--line)}
-  .protect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
-  .rule{border-top:1px solid var(--gold);padding-top:24px}
-  .rule p{color:var(--muted)}
-  .help{margin-top:56px;display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;justify-content:space-between;padding:32px 36px;border-radius:28px;border:1px solid var(--line);background:var(--ink)}
-  .help strong{font-family:var(--serif);font-weight:500;font-size:24px;display:block}
-  .help a{color:var(--gold)}
+  .protect{background:var(--coal);border-top:1px solid var(--line);padding:96px 0}
+  .protect-in{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:48px;align-items:start}
+  .shield{display:grid;place-items:center;width:110px;height:110px;border-radius:50%;border:3px solid var(--red);font-family:var(--display);font-weight:800;font-size:44px;color:var(--white)}
+  .protect h3{font-size:24px;margin-bottom:10px}
+  .protect p{color:var(--muted);font-size:16px}
+  .hotline{margin-top:56px;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center;border:1px solid var(--line);padding:26px 30px;background:var(--black)}
+  .hotline strong{font-family:var(--display);font-size:26px;text-transform:uppercase;color:var(--white);letter-spacing:.02em}
+  .hotline a{color:var(--yellow);font-weight:600;text-decoration:underline;text-underline-offset:4px}
 
-  footer{padding:64px 0 48px;color:var(--muted);font-size:15px}
-  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:32px}
-  .foot ul{display:flex;gap:8px 24px;list-style:none;flex-wrap:wrap}
-  .foot a{display:inline-flex;min-height:44px;align-items:center}
+  footer{padding:64px 0 40px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
+  .foot{display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center}
+  .foot .logo{width:120px}
+  .foot ul{display:flex;flex-wrap:wrap;gap:4px 22px;list-style:none;justify-content:center}
+  .foot ul a{display:inline-flex;align-items:center;min-height:44px}
+  .foot ul a:hover{color:var(--white)}
+  .social{display:flex;gap:10px}
+  .social a{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);font-size:22px;color:var(--white);transition:background .25s}
+  .social a:hover{background:var(--brand);color:#000;border-color:transparent}
+  .copy{margin-top:40px;font-size:13px}
 
-  /* Reveal */
-  .rv{opacity:0;transform:translateY(40px);filter:blur(6px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
-  .rv.in{opacity:1;transform:none;filter:none}
+  /* Reveal (GSAP setzt die Startwerte nur, wenn Bewegung erlaubt ist) */
 
-  @media (max-width:900px){
-    .nav ul{display:none}
-    .hero{padding:64px 0 88px}
-    .hero-grid,.hours,.loc{grid-template-columns:1fr}
-    .emblem{justify-self:center;max-width:300px;order:-1}
-    .bento{grid-template-columns:1fr}
-    .card,.card.big,.card.wide{grid-column:auto;grid-row:auto}
-    .protect-grid{grid-template-columns:1fr}
-    section{padding:88px 0}
-    .addr{padding:28px}
-    .addr address{font-size:28px}
+  @media (max-width:1000px){
+    .offer{grid-template-columns:repeat(2,1fr)}
+    .loc-grid{grid-template-columns:1fr 1fr}
+    .protect-in{grid-template-columns:1fr 1fr}
+    .shield{grid-column:1/-1}
+  }
+  @media (max-width:820px){
+    .burger{display:block}
+    .menu{position:fixed;inset:76px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--black);border-bottom:1px solid var(--line);padding:12px 16px 24px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .3s,transform .4s var(--ease),visibility .3s}
+    .menu.open{opacity:1;transform:none;visibility:visible}
+    .menu a{display:flex;min-height:56px;font-size:24px;border-bottom:1px solid var(--line)}
+    .menu .cta-s{margin:16px 0 0;justify-content:center;border:0}
+    .head,.hours,.contact,.jobs-in{grid-template-columns:1fr;gap:36px}
+    .head p{justify-self:start}
+    .loc-grid{grid-template-columns:1fr}
+    .loc.empty{min-height:220px}
+    section{padding:96px 0}
+    .badge-age{position:static;justify-content:center;margin-top:40px}
+    .hero{padding:56px 0 64px;min-height:auto}
+    form{grid-template-columns:1fr}
+    .foot{grid-template-columns:1fr;justify-items:start}
+    .foot ul{justify-content:flex-start}
+  }
+  @media (max-width:560px){
+    .offer{grid-template-columns:1fr}
+    .protect-in{grid-template-columns:1fr}
+    .btn{width:100%;justify-content:center}
+    .jobs li{flex-direction:column;align-items:flex-start;gap:4px}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-    .rv{opacity:1;transform:none;filter:none}
   }
 </style>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
-<div class="draft" role="note">Entwurf von ORDÉ – Texte und Angaben sind vorläufig und werden mit Ihnen abgestimmt.</div>
+<div class="draft" role="note"><b>Entwurf</b> – Gestaltungsvorschlag von ORDÉ. Fotos, Texte und Angaben werden mit Ihnen abgestimmt.</div>
 
-<header class="wrap nav">
-  <nav class="nav-inner" aria-label="Hauptnavigation">
-    <a class="logo" href="#top">Dream <i>Spielcenter</i></a>
-    <ul>
-      <li><a href="#angebot">Angebot</a></li>
-      <li><a href="#zeiten">Öffnungszeiten</a></li>
-      <li><a href="#anfahrt">Anfahrt</a></li>
-      <li><a href="#spielerschutz">Spielerschutz</a></li>
-    </ul>
-    <span class="age" aria-label="Zutritt ab 21 Jahren">21+</span>
-  </nav>
+<!-- Logo als SVG-Nachbau; wird durch die Original-Logodatei ersetzt -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="lg" cx="50%" cy="55%" r="60%">
+      <stop offset="0" stop-color="#ffd23a"/><stop offset=".45" stop-color="#ff8a1e"/><stop offset="1" stop-color="#e3171b"/>
+    </radialGradient>
+    <symbol id="logo" viewBox="0 0 480 230">
+      <ellipse cx="240" cy="115" rx="232" ry="107" fill="#e3171b" stroke="#fff" stroke-width="7"/>
+      <ellipse cx="240" cy="115" rx="218" ry="94" fill="url(#lg)"/>
+      <text x="236" y="152" text-anchor="middle" font-family="Lobster, cursive" font-size="132" fill="#fff" stroke="#c40f12" stroke-width="5" paint-order="stroke" transform="rotate(-6 240 115)">dream</text>
+      <path d="M388 46l6 15 16 1-12 10 4 16-14-9-14 9 4-16-12-10 16-1z" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="logo" href="#start" aria-label="Dream Spielcenter – zur Startseite"><svg viewBox="0 0 480 230"><use href="#logo"/></svg></a>
+    <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    <nav aria-label="Hauptnavigation">
+      <ul class="menu" id="menu">
+        <li><a href="#angebot">Angebot</a></li>
+        <li><a href="#standorte">Standorte</a></li>
+        <li><a href="#zeiten">Öffnungszeiten</a></li>
+        <li><a href="#jobs">Jobs</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a class="cta-s" href="#standorte"><i class="ti ti-map-pin" aria-hidden="true"></i>&nbsp;Standort finden</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <main id="inhalt">
-  <div class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div class="rv">
-        <span class="eyebrow"><span class="dot" id="hero-dot"></span><span id="hero-status">Kaufering · Viktor-Frankl-Str. 15</span></span>
-        <h1>Abends <em>abschalten.</em><br>In Kaufering.</h1>
-        <p class="lead">Ihre Spielhalle mit entspannter Atmosphäre, freundlichem Team und langen Öffnungszeiten – täglich bis 3 Uhr nachts.</p>
-        <div class="cta">
-          <a class="btn btn-main" href="#anfahrt">Anfahrt planen
-            <span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span>
-          </a>
-          <a class="btn btn-ghost" href="#zeiten">Öffnungszeiten</a>
-        </div>
+  <div class="hero" id="start">
+    <div class="rays" aria-hidden="true"></div>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="floor" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <svg class="hero-logo h-a" viewBox="0 0 480 230" role="img" aria-label="Dream Logo"><use href="#logo"/></svg>
+      <h1 class="h-a">Willkommen <span>im Dream.</span></h1>
+      <p class="h-a">Wir bieten Ihnen eine große Auswahl an unterschiedlichen Geldgewinnspiel- und Unterhaltungsgeräten – in gepflegter Atmosphäre und mit einem Team, das für Sie da ist.</p>
+      <div class="actions h-a">
+        <a class="btn btn-brand" href="#standorte"><i class="ti ti-map-pin" aria-hidden="true"></i>Standorte</a>
+        <a class="btn btn-line" href="#zeiten"><i class="ti ti-clock" aria-hidden="true"></i>Öffnungszeiten</a>
       </div>
-      <div class="emblem rv" aria-hidden="true">
-        <div class="orbit"></div>
-        <div class="shell"><div class="core">
-          <svg viewBox="0 0 200 200" fill="none">
-            <path d="M128 40a64 64 0 1 0 32 108A70 70 0 0 1 128 40Z" fill="url(#g)"/>
-            <g fill="#e2b866">
-              <path d="M150 58l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
-              <circle cx="168" cy="98" r="2.2"/><circle cx="138" cy="112" r="1.6"/><circle cx="160" cy="130" r="1.4" fill="#e0789a"/>
-            </g>
-            <defs><linearGradient id="g" x1="40" y1="40" x2="160" y2="170"><stop stop-color="#f3d79c"/><stop offset="1" stop-color="#b98a3c"/></linearGradient></defs>
-          </svg>
-        </div></div>
-      </div>
+      <div class="badge-age h-a"><strong>21+</strong><span>Zutritt nur mit<br>gültigem Ausweis</span></div>
     </div>
   </div>
 
-  <div class="strip" aria-hidden="true">
-    <div class="strip-track">
-      <span>Moderne Geldspielgeräte</span><span>Freundliches Team</span><span>Täglich bis 3 Uhr</span><span>Mitten in Kaufering</span>
-      <span>Moderne Geldspielgeräte</span><span>Freundliches Team</span><span>Täglich bis 3 Uhr</span><span>Mitten in Kaufering</span>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Geldgewinnspiele</span><span>Unterhaltungsgeräte</span><span>Gepflegtes Ambiente</span><span>Freundliches Team</span><span>Täglich bis 3 Uhr</span>
+      <span>Geldgewinnspiele</span><span>Unterhaltungsgeräte</span><span>Gepflegtes Ambiente</span><span>Freundliches Team</span><span>Täglich bis 3 Uhr</span>
     </div>
   </div>
 
   <section id="angebot" aria-labelledby="h-angebot">
     <div class="wrap">
-      <div class="sec-head rv">
-        <h2 id="h-angebot">Ein Abend, <em>wie er sein soll.</em></h2>
-        <p>Was Sie bei uns erwartet – ruhig, gepflegt und ohne Hektik.</p>
+      <div class="head">
+        <div class="rv"><p class="kicker">Unser Angebot</p><h2 id="h-angebot">Mehr als nur<br>ein Spiel.</h2></div>
+        <p class="rv">In jedem Dream erwartet Sie eine moderne Geräteauswahl, ein sauberes und sicheres Umfeld und Personal, das sich um Ihr Wohl kümmert.</p>
       </div>
-      <div class="bento">
-        <article class="card big rv"><div class="card-in">
-          <span class="num">01</span>
-          <div>
-            <h3>Aktuelle Spielgeräte</h3>
-            <p>Moderne Geldspielgeräte mit einer großen Auswahl an Spielen – regelmäßig gewartet und auf dem neuesten Stand. <span class="ph">Anzahl/Hersteller ergänzen</span></p>
+      <div class="offer">
+        <article class="rv"><i class="ti ti-device-gamepad-2" aria-hidden="true"></i><h3>Große Geräteauswahl</h3><p>Aktuelle Geldgewinnspiel- und Unterhaltungsgeräte mit vielen verschiedenen Spielen.</p></article>
+        <article class="rv"><i class="ti ti-sparkles" aria-hidden="true"></i><h3>Gepflegtes Ambiente</h3><p>Saubere, klimatisierte Räume mit angenehmer Beleuchtung.</p><span class="todo">Klimaanlage bestätigen</span></article>
+        <article class="rv"><i class="ti ti-coffee" aria-hidden="true"></i><h3>Getränke &amp; Snacks</h3><p>Eine kleine Erfrischung zwischendurch.</p><span class="todo">Angebot bestätigen</span></article>
+        <article class="rv"><i class="ti ti-shield-check" aria-hidden="true"></i><h3>Sicherheit</h3><p>Geschultes Personal vor Ort, Jugend- und Spielerschutz nach Gesetz.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="standorte" class="locs" aria-labelledby="h-standorte">
+    <div class="wrap">
+      <div class="head">
+        <div class="rv"><p class="kicker">Standorte</p><h2 id="h-standorte">Das Dream<br>in Ihrer Nähe.</h2></div>
+        <p class="rv">Wählen Sie Ihr Dream Spielcenter – mit Adresse, Öffnungszeiten und Route.</p>
+      </div>
+      <div class="loc-grid">
+        <article class="loc rv" data-open="9,9,9,9,9,9,11" data-close="3">
+          <div class="loc-img"><span class="photo">Foto Außenansicht</span><span class="neon" aria-hidden="true">dream</span></div>
+          <div class="loc-body">
+            <span class="status" aria-live="polite">Öffnungszeiten prüfen</span>
+            <h3>Kaufering</h3>
+            <address>Viktor-Frankl-Str. 15<br>86916 Kaufering</address>
+            <div class="loc-links">
+              <a href="https://www.google.com/maps/search/?api=1&query=Viktor-Frankl-Str.+15+86916+Kaufering" target="_blank" rel="noopener"><i class="ti ti-route" aria-hidden="true"></i>Route<span class="sr"> nach Kaufering (öffnet Google Maps)</span></a>
+              <a href="#kontakt"><i class="ti ti-phone" aria-hidden="true"></i>Kontakt</a>
+            </div>
           </div>
-          <div class="big-visual" aria-hidden="true"><i style="height:45%"></i><i style="height:80%"></i><i style="height:60%"></i><i style="height:100%"></i><i style="height:70%"></i><i style="height:50%"></i></div>
-        </div></article>
-        <article class="card rv"><div class="card-in">
-          <span class="num">02</span>
-          <div><h3>Gepflegtes Ambiente</h3><p>Saubere Räume, angenehme Beleuchtung und Plätze, an denen man sich wohlfühlt.</p></div>
-        </div></article>
-        <article class="card rv"><div class="card-in">
-          <span class="num">03</span>
-          <div><h3>Getränke &amp; Snacks</h3><p>Kleine Erfrischung zwischendurch. <span class="ph">Angebot bestätigen</span></p></div>
-        </div></article>
-        <article class="card wide rv"><div class="card-in">
-          <span class="num">04</span>
-          <div><h3>Persönlicher Service</h3><p>Unser Team ist während der gesamten Öffnungszeit vor Ort – für Fragen, Auszahlungen und alles rund um Ihren Besuch.</p></div>
-        </div></article>
-        <article class="card rv"><div class="card-in">
-          <span class="num">05</span>
-          <div><h3>Parken</h3><p>Parkmöglichkeiten in der Nähe. <span class="ph">bitte bestätigen</span></p></div>
-        </div></article>
+        </article>
+        <div class="loc empty rv"><div><i class="ti ti-map-pin-plus" aria-hidden="true"></i><p><b>Weiterer Standort</b><br>Adresse und Foto ergänzen</p></div></div>
+        <div class="loc empty rv"><div><i class="ti ti-map-pin-plus" aria-hidden="true"></i><p><b>Weiterer Standort</b><br>Adresse und Foto ergänzen</p></div></div>
       </div>
     </div>
   </section>
@@ -257,16 +351,17 @@
   <section id="zeiten" aria-labelledby="h-zeiten">
     <div class="wrap hours">
       <div class="rv">
-        <h2 id="h-zeiten">Lange <em>geöffnet.</em></h2>
-        <div class="now" style="margin-top:40px"><div class="now-in" aria-live="polite">
-          <span class="eyebrow"><span class="dot" id="now-dot"></span>Gerade</span>
-          <p class="now-status" id="now-status">Wir haben <em>täglich</em> geöffnet.</p>
-          <p style="color:var(--muted)" id="now-sub">Montag bis Samstag ab 9 Uhr, Sonntag ab 11 Uhr – jeweils bis 3 Uhr nachts.</p>
-        </div></div>
+        <p class="kicker">Öffnungszeiten</p>
+        <h2 id="h-zeiten">Für Sie<br>da bis spät.</h2>
+        <div class="clock" style="margin-top:44px">
+          <p id="now-label">Kaufering</p>
+          <p class="big" id="now-big">Bis <span>3 Uhr</span></p>
+          <p id="now-sub">Montag bis Samstag ab 9 Uhr, Sonntag ab 11 Uhr.</p>
+        </div>
       </div>
       <div class="rv">
         <table>
-          <caption>Öffnungszeiten <span class="ph">bitte prüfen</span></caption>
+          <caption>Dream Kaufering <span class="todo" style="margin:0 0 0 8px">bitte prüfen</span></caption>
           <tbody id="hours-body">
             <tr data-d="1"><th scope="row">Montag</th><td>09:00 – 03:00</td></tr>
             <tr data-d="2"><th scope="row">Dienstag</th><td>09:00 – 03:00</td></tr>
@@ -281,93 +376,124 @@
     </div>
   </section>
 
-  <section id="anfahrt" aria-labelledby="h-anfahrt" style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head rv"><h2 id="h-anfahrt">So finden <em>Sie uns.</em></h2></div>
-      <div class="loc">
-        <div class="addr rv">
-          <address>Dream Spielcenter<br>Viktor-Frankl-Str. 15<br>86916 Kaufering</address>
-          <dl>
-            <dt>Telefon</dt><dd><span class="ph">Nummer ergänzen</span></dd>
-            <dt>E-Mail</dt><dd><span class="ph">Adresse ergänzen</span></dd>
-          </dl>
-          <a class="btn btn-main" style="align-self:flex-start" href="https://www.google.com/maps/search/?api=1&query=Viktor-Frankl-Str.+15,+86916+Kaufering" target="_blank" rel="noopener">Route in Google Maps
-            <span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span>
-            <span class="sr" style="position:absolute;left:-9999px">(öffnet in neuem Fenster)</span>
-          </a>
-        </div>
-        <div class="map rv" aria-hidden="true"><div class="map-in">
-          <svg viewBox="0 0 400 380" preserveAspectRatio="xMidYMid slice">
-            <g stroke="rgba(236,226,206,.10)" stroke-width="1">
-              <path d="M0 80h400M0 170h400M0 270h400M70 0v380M190 0v380M310 0v380"/>
-            </g>
-            <path d="M-10 230C80 210 140 140 220 150s140 70 200 40" stroke="rgba(226,184,102,.45)" stroke-width="10" fill="none" stroke-linecap="round"/>
-            <path d="M120 -10C140 90 170 200 160 400" stroke="rgba(236,226,206,.18)" stroke-width="6" fill="none"/>
-            <circle cx="220" cy="150" r="34" fill="rgba(224,120,154,.16)"/>
-            <circle cx="220" cy="150" r="9" fill="#e0789a"/>
-            <text x="240" y="130" fill="#ece2ce" font-family="Space Grotesk" font-size="13">Dream Spielcenter</text>
-          </svg>
-        </div></div>
+  <section id="jobs" class="jobs" aria-labelledby="h-jobs">
+    <div class="wrap jobs-in">
+      <div class="rv">
+        <p class="kicker">Karriere</p>
+        <h2 id="h-jobs">Werde Teil vom Dream-Team.</h2>
+        <p class="lead">Du bist gern Gastgeber, behältst den Überblick und arbeitest gern abends? Dann passt du zu uns.</p>
+        <a class="btn btn-dark" href="#kontakt"><i class="ti ti-send" aria-hidden="true"></i>Jetzt bewerben</a>
       </div>
+      <ul class="rv" aria-label="Offene Stellen (Beispiel)">
+        <li><h3>Servicekraft (m/w/d)</h3><span>Vollzeit · Teilzeit</span></li>
+        <li><h3>Aushilfe (m/w/d)</h3><span>Minijob</span></li>
+        <li><h3>Filialleitung (m/w/d)</h3><span>Vollzeit</span></li>
+      </ul>
     </div>
   </section>
 
-  <section id="spielerschutz" class="protect" aria-labelledby="h-schutz">
+  <section id="kontakt" aria-labelledby="h-kontakt">
+    <div class="wrap contact">
+      <div class="rv">
+        <p class="kicker">Kontakt</p>
+        <h2 id="h-kontakt">Schreiben<br>Sie uns.</h2>
+        <div class="channels">
+          <a href="#kontakt"><i class="ti ti-phone" aria-hidden="true"></i><span><small>Telefon</small>Nummer ergänzen</span></a>
+          <a href="#kontakt"><i class="ti ti-mail" aria-hidden="true"></i><span><small>E-Mail</small>Adresse ergänzen</span></a>
+        </div>
+      </div>
+      <form class="rv" action="#" onsubmit="event.preventDefault();this.querySelector('[role=status]').textContent='Demo: Im fertigen Projekt wird die Nachricht jetzt verschickt.'">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-mail">E-Mail</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="f-topic">Anliegen</label>
+          <select id="f-topic" name="topic"><option>Allgemeine Frage</option><option>Bewerbung</option><option>Feedback</option></select></div>
+        <div class="field full"><label for="f-msg">Nachricht</label><textarea id="f-msg" name="message" required></textarea></div>
+        <label class="consent"><input type="checkbox" required> Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden (siehe Datenschutzerklärung).</label>
+        <button class="btn btn-brand" type="submit"><i class="ti ti-send" aria-hidden="true"></i>Nachricht senden</button>
+        <p role="status" style="grid-column:1/-1;color:var(--yellow)"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="protect" id="spielerschutz" aria-labelledby="h-schutz">
     <div class="wrap">
-      <div class="sec-head rv" style="margin-bottom:0">
-        <h2 id="h-schutz">Spielen mit <em>Verantwortung.</em></h2>
-        <p>Spielen soll Unterhaltung bleiben. Deshalb nehmen wir Jugend- und Spielerschutz ernst.</p>
+      <h2 id="h-schutz" class="sr">Jugend- und Spielerschutz</h2>
+      <div class="protect-in">
+        <div class="shield" aria-hidden="true">21+</div>
+        <div><h3>Zutritt ab 21</h3><p>Nur für Erwachsene ab 21 Jahren. Wir kontrollieren am Eingang – bitte gültigen Lichtbildausweis mitbringen.</p><span class="todo">Altersgrenze bestätigen</span></div>
+        <div><h3>Sperrsystem OASIS</h3><p>Wir sind an das bundesweite Spielersperrsystem angeschlossen. Eine Selbstsperre ist bei uns vor Ort möglich.</p></div>
+        <div><h3>Geschultes Personal</h3><p>Unser Team ist im Spielerschutz geschult und spricht Sie an, wenn Spielen zum Problem zu werden scheint.</p></div>
       </div>
-      <div class="protect-grid">
-        <div class="rule rv"><h3>Zutritt ab 21</h3><p>Der Zutritt ist nur Personen ab 21 Jahren gestattet. Bitte bringen Sie einen gültigen Lichtbildausweis mit – wir kontrollieren am Eingang. <span class="ph">Altersgrenze bestätigen</span></p></div>
-        <div class="rule rv"><h3>Sperrsystem OASIS</h3><p>Wir sind an das bundesweite Spielersperrsystem angeschlossen. Wer sich sperren lassen möchte, kann das bei uns vor Ort tun.</p></div>
-        <div class="rule rv"><h3>Geschultes Personal</h3><p>Unser Team ist im Spielerschutz geschult und spricht Sie an, wenn es den Eindruck hat, dass Spielen zum Problem wird.</p></div>
-      </div>
-      <div class="help rv">
-        <div><strong>Glücksspiel kann süchtig machen.</strong>Hilfe und Beratung, kostenlos und anonym.</div>
-        <div>BZgA-Telefonberatung: <a href="tel:08001372700">0800 1 37 27 00</a><br><a href="https://www.check-dein-spiel.de" target="_blank" rel="noopener">check-dein-spiel.de</a></div>
+      <div class="hotline">
+        <strong>Glücksspiel kann süchtig machen.</strong>
+        <span>Kostenlose Beratung der BZgA: <a href="tel:08001372700">0800 1 37 27 00</a> · <a href="https://www.check-dein-spiel.de" target="_blank" rel="noopener">check-dein-spiel.de<span class="sr"> (öffnet in neuem Fenster)</span></a></span>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="wrap">
-  <div class="foot">
-    <p>© <span id="y">2026</span> Dream Spielcenter Kaufering · Betreiber: <span class="ph">laut Impressum ergänzen</span></p>
-    <ul>
-      <li><a href="#">Impressum</a></li>
-      <li><a href="#">Datenschutz</a></li>
-      <li><a href="#spielerschutz">Spielerschutz</a></li>
-    </ul>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="logo" href="#start" aria-label="Nach oben"><svg viewBox="0 0 480 230"><use href="#logo"/></svg></a>
+      <ul>
+        <li><a href="#standorte">Standorte</a></li>
+        <li><a href="#zeiten">Öffnungszeiten</a></li>
+        <li><a href="#jobs">Jobs</a></li>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+      </ul>
+      <div class="social">
+        <a href="#" aria-label="Dream auf Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Dream auf Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <p class="copy">© <span id="y">2026</span> Dream Spielcenter · Teilnahme ab 21 Jahren · Glücksspiel kann süchtig machen.</p>
   </div>
 </footer>
 
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
 <script>
-  // Einblenden beim Scrollen
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
-  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  // Menü am Handy
+  const burger = document.querySelector('.burger'), menu = document.getElementById('menu');
+  burger.addEventListener('click', () => {
+    const open = burger.getAttribute('aria-expanded') !== 'true';
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    menu.classList.toggle('open', open);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { if (menu.classList.contains('open')) burger.click(); }));
 
-  // Geöffnet/geschlossen live (Zeitzone Berlin). Öffnung am Tag d bis 3 Uhr des Folgetags.
-  const OPEN = { 0: 11, 1: 9, 2: 9, 3: 9, 4: 9, 5: 9, 6: 9 }, CLOSE = 3;
-  const parts = new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
-  const map = { So: 0, Mo: 1, Di: 2, Mi: 3, Do: 4, Fr: 5, Sa: 6 };
-  const day = map[parts.find(p => p.type === 'weekday').value.replace('.', '')];
-  const h = +parts.find(p => p.type === 'hour').value + (+parts.find(p => p.type === 'minute').value) / 60;
-  const prev = (day + 6) % 7;
-  const isOpen = h < CLOSE || h >= OPEN[day];
-  const bizDay = h < CLOSE ? prev : day;
-  document.querySelector(`#hours-body tr[data-d="${bizDay}"]`)?.classList.add('today');
-  const st = document.getElementById('now-status'), sub = document.getElementById('now-sub');
-  if (isOpen) {
-    st.innerHTML = 'Jetzt <em>geöffnet.</em>';
-    sub.textContent = 'Heute Nacht bis 3:00 Uhr.';
-    document.getElementById('hero-status').textContent = 'Jetzt geöffnet · bis 3 Uhr';
-    ['now-dot', 'hero-dot'].forEach(id => document.getElementById(id).classList.add('open'));
-  } else {
-    st.innerHTML = 'Ab <em>' + OPEN[day] + ' Uhr</em> wieder da.';
-    sub.textContent = 'Wir öffnen heute um ' + OPEN[day] + ':00 Uhr.';
-  }
+  // Geöffnet/geschlossen live, Zeitzone Berlin. Öffnung am Tag d bis CLOSE Uhr des Folgetags.
+  const fmt = new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
+  const day = { So: 0, Mo: 1, Di: 2, Mi: 3, Do: 4, Fr: 5, Sa: 6 }[fmt.find(p => p.type === 'weekday').value.replace('.', '')];
+  const now = +fmt.find(p => p.type === 'hour').value + fmt.find(p => p.type === 'minute').value / 60;
+  document.querySelectorAll('.loc[data-open]').forEach((loc, i) => {
+    const open = loc.dataset.open.split(',').map(Number), close = +loc.dataset.close;
+    const idx = d => (d + 6) % 7; // data-open ist Mo..So
+
+    const isOpen = now < close || now >= open[idx(day)];
+    const st = loc.querySelector('.status');
+    st.textContent = isOpen ? 'Jetzt geöffnet · bis ' + close + ':00 Uhr' : 'Geschlossen · öffnet um ' + open[idx(day)] + ':00 Uhr';
+    st.classList.toggle('open', isOpen);
+    if (i === 0) {
+      const bizDay = now < close ? (day + 6) % 7 : day;
+      document.querySelector(`#hours-body tr[data-d="${bizDay}"]`)?.classList.add('today');
+      document.getElementById('now-big').innerHTML = isOpen ? 'Jetzt <span>geöffnet</span>' : 'Ab <span>' + open[idx(day)] + ' Uhr</span>';
+      document.getElementById('now-sub').textContent = isOpen ? 'Heute Nacht bis ' + close + ':00 Uhr.' : 'Heute wieder ab ' + open[idx(day)] + ':00 Uhr für Sie da.';
+    }
+  });
   document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Animationen mit GSAP – nur wenn Bewegung erlaubt ist
+  if (window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from('.h-a', { y: 40, opacity: 0, duration: 1, ease: 'power3.out', stagger: .12 });
+    gsap.from('.hero-logo', { scale: .85, rotate: -4, duration: 1.4, ease: 'elastic.out(1,.6)' });
+    gsap.utils.toArray('.rv').forEach(el => gsap.from(el, { y: 50, opacity: 0, duration: .9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } }));
+    gsap.to('.top', { '--p': 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: true } });
+  }
 </script>
 </body>
 </html>
