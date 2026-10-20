@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dream Spielcenter Kaufering</title>
+<meta name="description" content="Dream Spielcenter in Kaufering – moderne Spielhalle an der Viktor-Frankl-Straße. Öffnungszeiten, Anfahrt und Spielerschutz.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b0d1a;
+    --ink-2:#12152a;
+    --ink-3:#1b1f3a;
+    --line:rgba(236,226,206,.12);
+    --text:#ece2ce;
+    --muted:#b3ab9b;
+    --gold:#e2b866;
+    --gold-soft:rgba(226,184,102,.14);
+    --rose:#e0789a;
+    --ok:#7fd1a5;
+    --ease:cubic-bezier(.32,.72,0,1);
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"Space Grotesk",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  img,svg{display:block;max-width:100%}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+  .wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+  .skip{position:absolute;left:-9999px;top:8px;background:var(--gold);color:var(--ink);padding:10px 16px;border-radius:999px;z-index:30}
+  .skip:focus{left:16px}
+
+  /* Entwurfs-Hinweis */
+  .draft{background:var(--gold);color:var(--ink);font-size:13px;font-weight:500;text-align:center;padding:8px 16px}
+
+  /* Nav */
+  .nav{position:sticky;top:14px;z-index:20;margin-top:14px}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 8px 8px 22px;border:1px solid var(--line);border-radius:999px;background:rgba(11,13,26,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+  .logo{font-family:var(--serif);font-size:22px;font-weight:500;text-decoration:none;letter-spacing:.01em;display:flex;align-items:baseline;gap:8px}
+  .logo i{font-style:italic;font-weight:300;color:var(--gold)}
+  .nav ul{display:flex;gap:4px;list-style:none}
+  .nav ul a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;text-decoration:none;font-size:15px;color:var(--muted);transition:color .4s var(--ease),background .4s var(--ease)}
+  .nav ul a:hover{color:var(--text);background:rgba(236,226,206,.06)}
+  .age{display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:44px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);font-weight:600;font-size:14px}
+
+  /* Hero */
+  .hero{position:relative;padding:96px 0 120px;isolation:isolate}
+  .hero::before{content:"";position:absolute;inset:-160px 0 0;z-index:-1;
+    background:
+      radial-gradient(600px 380px at 78% 30%,rgba(224,120,154,.20),transparent 70%),
+      radial-gradient(520px 420px at 64% 62%,rgba(226,184,102,.16),transparent 70%)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+  .dot.open{background:var(--ok);box-shadow:0 0 0 4px rgba(127,209,165,.18)}
+  h1{font-family:var(--serif);font-weight:300;font-size:clamp(48px,8vw,104px);line-height:.95;letter-spacing:-.02em;margin:28px 0 28px}
+  h1 em{font-style:italic;color:var(--gold)}
+  .lead{max-width:30em;color:var(--muted);font-size:19px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+  .btn{display:inline-flex;align-items:center;gap:14px;min-height:52px;padding:6px 8px 6px 24px;border-radius:999px;text-decoration:none;font-weight:500;transition:transform .5s var(--ease),background .5s var(--ease)}
+  .btn:active{transform:scale(.98)}
+  .btn-main{background:var(--gold);color:var(--ink)}
+  .btn-main .ic{background:rgba(11,13,26,.12)}
+  .btn-ghost{border:1px solid var(--line);padding-right:24px}
+  .btn-ghost:hover{background:rgba(236,226,206,.06)}
+  .ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;transition:transform .5s var(--ease)}
+  .btn:hover .ic{transform:translate(2px,-2px) scale(1.05)}
+
+  /* Moon emblem */
+  .emblem{position:relative;aspect-ratio:1;max-width:440px;justify-self:end;width:100%}
+  .emblem .shell{position:absolute;inset:0;border-radius:50%;padding:10px;border:1px solid var(--line);background:rgba(236,226,206,.03)}
+  .emblem .core{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2a2f57,#12152a 70%);box-shadow:inset 0 1px 1px rgba(255,255,255,.12);display:grid;place-items:center;overflow:hidden}
+  .emblem svg{width:78%}
+  .orbit{position:absolute;inset:-18px;border-radius:50%;border:1px dashed rgba(226,184,102,.25);animation:spin 60s linear infinite}
+  .orbit::after{content:"";position:absolute;top:50%;left:-5px;width:10px;height:10px;border-radius:50%;background:var(--rose)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* Strip */
+  .strip{border-block:1px solid var(--line);padding:22px 0;overflow:hidden}
+  .strip-track{display:flex;gap:48px;white-space:nowrap;font-family:var(--serif);font-style:italic;font-weight:300;font-size:26px;color:var(--muted);animation:marquee 40s linear infinite;width:max-content}
+  .strip-track span::after{content:"✦";font-style:normal;color:var(--gold);margin-left:48px;font-size:16px;vertical-align:middle}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+
+  section{padding:120px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
+  h2{font-family:var(--serif);font-weight:300;font-size:clamp(36px,5vw,60px);line-height:1.02;letter-spacing:-.015em}
+  h2 em{font-style:italic;color:var(--gold)}
+  .sec-head p{max-width:26em;color:var(--muted)}
+  h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15;margin-bottom:10px}
+
+  /* Bento */
+  .bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(220px,auto);gap:16px}
+  .card{grid-column:span 4;border:1px solid var(--line);border-radius:28px;padding:8px;background:rgba(236,226,206,.02)}
+  .card-in{height:100%;border-radius:21px;background:var(--ink-2);box-shadow:inset 0 1px 1px rgba(255,255,255,.06);padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+  .card p{color:var(--muted)}
+  .card.big{grid-column:span 8;grid-row:span 2}
+  .card.big .card-in{background:radial-gradient(500px 300px at 85% 0%,rgba(226,184,102,.16),transparent 70%),var(--ink-2)}
+  .card.wide{grid-column:span 8}
+  .num{font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:var(--gold)}
+  .ph{display:inline-block;font-size:12px;letter-spacing:.06em;color:var(--ink);background:var(--gold);border-radius:999px;padding:2px 10px;margin-left:6px;vertical-align:middle;font-family:var(--sans);font-weight:500}
+  .big-visual{display:flex;gap:10px;align-items:flex-end;height:120px}
+  .big-visual i{flex:1;border-radius:14px 14px 4px 4px;background:linear-gradient(to top,var(--ink-3),rgba(226,184,102,.35))}
+
+  /* Hours */
+  .hours{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .now{border:1px solid var(--line);border-radius:28px;padding:8px}
+  .now-in{border-radius:21px;background:var(--ink-2);padding:36px}
+  .now-status{font-family:var(--serif);font-size:44px;font-weight:300;line-height:1.05;margin:16px 0 8px}
+  .now-status em{font-style:italic;color:var(--gold)}
+  table{width:100%;border-collapse:collapse}
+  caption{text-align:left;color:var(--muted);font-size:14px;padding-bottom:12px}
+  th,td{padding:18px 4px;border-bottom:1px solid var(--line);text-align:left;font-weight:400}
+  td{text-align:right;font-variant-numeric:tabular-nums}
+  tr.today th,tr.today td{color:var(--gold)}
+  tr.today th::after{content:"heute";font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-left:10px;border:1px solid var(--gold);border-radius:999px;padding:1px 8px;vertical-align:middle}
+
+  /* Location */
+  .loc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .map{border:1px solid var(--line);border-radius:28px;padding:8px;min-height:380px}
+  .map-in{height:100%;border-radius:21px;overflow:hidden;background:var(--ink-2);position:relative}
+  .map-in svg{width:100%;height:100%;position:absolute;inset:0}
+  .addr{display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:40px;border-radius:28px;background:var(--ink-2);border:1px solid var(--line)}
+  .addr address{font-style:normal;font-family:var(--serif);font-size:34px;font-weight:300;line-height:1.2}
+  .addr dl{display:grid;grid-template-columns:auto 1fr;gap:10px 24px;color:var(--muted)}
+  .addr dt{color:var(--text)}
+
+  /* Spielerschutz */
+  .protect{background:var(--ink-2);border-block:1px solid var(--line)}
+  .protect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+  .rule{border-top:1px solid var(--gold);padding-top:24px}
+  .rule p{color:var(--muted)}
+  .help{margin-top:56px;display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;justify-content:space-between;padding:32px 36px;border-radius:28px;border:1px solid var(--line);background:var(--ink)}
+  .help strong{font-family:var(--serif);font-weight:500;font-size:24px;display:block}
+  .help a{color:var(--gold)}
+
+  footer{padding:64px 0 48px;color:var(--muted);font-size:15px}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:32px}
+  .foot ul{display:flex;gap:8px 24px;list-style:none;flex-wrap:wrap}
+  .foot a{display:inline-flex;min-height:44px;align-items:center}
+
+  /* Reveal */
+  .rv{opacity:0;transform:translateY(40px);filter:blur(6px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+  .rv.in{opacity:1;transform:none;filter:none}
+
+  @media (max-width:900px){
+    .nav ul{display:none}
+    .hero{padding:64px 0 88px}
+    .hero-grid,.hours,.loc{grid-template-columns:1fr}
+    .emblem{justify-self:center;max-width:300px;order:-1}
+    .bento{grid-template-columns:1fr}
+    .card,.card.big,.card.wide{grid-column:auto;grid-row:auto}
+    .protect-grid{grid-template-columns:1fr}
+    section{padding:88px 0}
+    .addr{padding:28px}
+    .addr address{font-size:28px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .rv{opacity:1;transform:none;filter:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<div class="draft" role="note">Entwurf von ORDÉ – Texte und Angaben sind vorläufig und werden mit Ihnen abgestimmt.</div>
+
+<header class="wrap nav">
+  <nav class="nav-inner" aria-label="Hauptnavigation">
+    <a class="logo" href="#top">Dream <i>Spielcenter</i></a>
+    <ul>
+      <li><a href="#angebot">Angebot</a></li>
+      <li><a href="#zeiten">Öffnungszeiten</a></li>
+      <li><a href="#anfahrt">Anfahrt</a></li>
+      <li><a href="#spielerschutz">Spielerschutz</a></li>
+    </ul>
+    <span class="age" aria-label="Zutritt ab 21 Jahren">21+</span>
+  </nav>
+</header>
+
+<main id="inhalt">
+  <div class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="rv">
+        <span class="eyebrow"><span class="dot" id="hero-dot"></span><span id="hero-status">Kaufering · Viktor-Frankl-Str. 15</span></span>
+        <h1>Abends <em>abschalten.</em><br>In Kaufering.</h1>
+        <p class="lead">Ihre Spielhalle mit entspannter Atmosphäre, freundlichem Team und langen Öffnungszeiten – täglich bis 3 Uhr nachts.</p>
+        <div class="cta">
+          <a class="btn btn-main" href="#anfahrt">Anfahrt planen
+            <span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span>
+          </a>
+          <a class="btn btn-ghost" href="#zeiten">Öffnungszeiten</a>
+        </div>
+      </div>
+      <div class="emblem rv" aria-hidden="true">
+        <div class="orbit"></div>
+        <div class="shell"><div class="core">
+          <svg viewBox="0 0 200 200" fill="none">
+            <path d="M128 40a64 64 0 1 0 32 108A70 70 0 0 1 128 40Z" fill="url(#g)"/>
+            <g fill="#e2b866">
+              <path d="M150 58l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+              <circle cx="168" cy="98" r="2.2"/><circle cx="138" cy="112" r="1.6"/><circle cx="160" cy="130" r="1.4" fill="#e0789a"/>
+            </g>
+            <defs><linearGradient id="g" x1="40" y1="40" x2="160" y2="170"><stop stop-color="#f3d79c"/><stop offset="1" stop-color="#b98a3c"/></linearGradient></defs>
+          </svg>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track">
+      <span>Moderne Geldspielgeräte</span><span>Freundliches Team</span><span>Täglich bis 3 Uhr</span><span>Mitten in Kaufering</span>
+      <span>Moderne Geldspielgeräte</span><span>Freundliches Team</span><span>Täglich bis 3 Uhr</span><span>Mitten in Kaufering</span>
+    </div>
+  </div>
+
+  <section id="angebot" aria-labelledby="h-angebot">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2 id="h-angebot">Ein Abend, <em>wie er sein soll.</em></h2>
+        <p>Was Sie bei uns erwartet – ruhig, gepflegt und ohne Hektik.</p>
+      </div>
+      <div class="bento">
+        <article class="card big rv"><div class="card-in">
+          <span class="num">01</span>
+          <div>
+            <h3>Aktuelle Spielgeräte</h3>
+            <p>Moderne Geldspielgeräte mit einer großen Auswahl an Spielen – regelmäßig gewartet und auf dem neuesten Stand. <span class="ph">Anzahl/Hersteller ergänzen</span></p>
+          </div>
+          <div class="big-visual" aria-hidden="true"><i style="height:45%"></i><i style="height:80%"></i><i style="height:60%"></i><i style="height:100%"></i><i style="height:70%"></i><i style="height:50%"></i></div>
+        </div></article>
+        <article class="card rv"><div class="card-in">
+          <span class="num">02</span>
+          <div><h3>Gepflegtes Ambiente</h3><p>Saubere Räume, angenehme Beleuchtung und Plätze, an denen man sich wohlfühlt.</p></div>
+        </div></article>
+        <article class="card rv"><div class="card-in">
+          <span class="num">03</span>
+          <div><h3>Getränke &amp; Snacks</h3><p>Kleine Erfrischung zwischendurch. <span class="ph">Angebot bestätigen</span></p></div>
+        </div></article>
+        <article class="card wide rv"><div class="card-in">
+          <span class="num">04</span>
+          <div><h3>Persönlicher Service</h3><p>Unser Team ist während der gesamten Öffnungszeit vor Ort – für Fragen, Auszahlungen und alles rund um Ihren Besuch.</p></div>
+        </div></article>
+        <article class="card rv"><div class="card-in">
+          <span class="num">05</span>
+          <div><h3>Parken</h3><p>Parkmöglichkeiten in der Nähe. <span class="ph">bitte bestätigen</span></p></div>
+        </div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="zeiten" aria-labelledby="h-zeiten">
+    <div class="wrap hours">
+      <div class="rv">
+        <h2 id="h-zeiten">Lange <em>geöffnet.</em></h2>
+        <div class="now" style="margin-top:40px"><div class="now-in" aria-live="polite">
+          <span class="eyebrow"><span class="dot" id="now-dot"></span>Gerade</span>
+          <p class="now-status" id="now-status">Wir haben <em>täglich</em> geöffnet.</p>
+          <p style="color:var(--muted)" id="now-sub">Montag bis Samstag ab 9 Uhr, Sonntag ab 11 Uhr – jeweils bis 3 Uhr nachts.</p>
+        </div></div>
+      </div>
+      <div class="rv">
+        <table>
+          <caption>Öffnungszeiten <span class="ph">bitte prüfen</span></caption>
+          <tbody id="hours-body">
+            <tr data-d="1"><th scope="row">Montag</th><td>09:00 – 03:00</td></tr>
+            <tr data-d="2"><th scope="row">Dienstag</th><td>09:00 – 03:00</td></tr>
+            <tr data-d="3"><th scope="row">Mittwoch</th><td>09:00 – 03:00</td></tr>
+            <tr data-d="4"><th scope="row">Donnerstag</th><td>09:00 – 03:00</td></tr>
+            <tr data-d="5"><th scope="row">Freitag</th><td>09:00 – 03:00</td></tr>
+            <tr data-d="6"><th scope="row">Samstag</th><td>09:00 – 03:00</td></tr>
+            <tr data-d="0"><th scope="row">Sonntag</th><td>11:00 – 03:00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="anfahrt" aria-labelledby="h-anfahrt" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head rv"><h2 id="h-anfahrt">So finden <em>Sie uns.</em></h2></div>
+      <div class="loc">
+        <div class="addr rv">
+          <address>Dream Spielcenter<br>Viktor-Frankl-Str. 15<br>86916 Kaufering</address>
+          <dl>
+            <dt>Telefon</dt><dd><span class="ph">Nummer ergänzen</span></dd>
+            <dt>E-Mail</dt><dd><span class="ph">Adresse ergänzen</span></dd>
+          </dl>
+          <a class="btn btn-main" style="align-self:flex-start" href="https://www.google.com/maps/search/?api=1&query=Viktor-Frankl-Str.+15,+86916+Kaufering" target="_blank" rel="noopener">Route in Google Maps
+            <span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span>
+            <span class="sr" style="position:absolute;left:-9999px">(öffnet in neuem Fenster)</span>
+          </a>
+        </div>
+        <div class="map rv" aria-hidden="true"><div class="map-in">
+          <svg viewBox="0 0 400 380" preserveAspectRatio="xMidYMid slice">
+            <g stroke="rgba(236,226,206,.10)" stroke-width="1">
+              <path d="M0 80h400M0 170h400M0 270h400M70 0v380M190 0v380M310 0v380"/>
+            </g>
+            <path d="M-10 230C80 210 140 140 220 150s140 70 200 40" stroke="rgba(226,184,102,.45)" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <path d="M120 -10C140 90 170 200 160 400" stroke="rgba(236,226,206,.18)" stroke-width="6" fill="none"/>
+            <circle cx="220" cy="150" r="34" fill="rgba(224,120,154,.16)"/>
+            <circle cx="220" cy="150" r="9" fill="#e0789a"/>
+            <text x="240" y="130" fill="#ece2ce" font-family="Space Grotesk" font-size="13">Dream Spielcenter</text>
+          </svg>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="spielerschutz" class="protect" aria-labelledby="h-schutz">
+    <div class="wrap">
+      <div class="sec-head rv" style="margin-bottom:0">
+        <h2 id="h-schutz">Spielen mit <em>Verantwortung.</em></h2>
+        <p>Spielen soll Unterhaltung bleiben. Deshalb nehmen wir Jugend- und Spielerschutz ernst.</p>
+      </div>
+      <div class="protect-grid">
+        <div class="rule rv"><h3>Zutritt ab 21</h3><p>Der Zutritt ist nur Personen ab 21 Jahren gestattet. Bitte bringen Sie einen gültigen Lichtbildausweis mit – wir kontrollieren am Eingang. <span class="ph">Altersgrenze bestätigen</span></p></div>
+        <div class="rule rv"><h3>Sperrsystem OASIS</h3><p>Wir sind an das bundesweite Spielersperrsystem angeschlossen. Wer sich sperren lassen möchte, kann das bei uns vor Ort tun.</p></div>
+        <div class="rule rv"><h3>Geschultes Personal</h3><p>Unser Team ist im Spielerschutz geschult und spricht Sie an, wenn es den Eindruck hat, dass Spielen zum Problem wird.</p></div>
+      </div>
+      <div class="help rv">
+        <div><strong>Glücksspiel kann süchtig machen.</strong>Hilfe und Beratung, kostenlos und anonym.</div>
+        <div>BZgA-Telefonberatung: <a href="tel:08001372700">0800 1 37 27 00</a><br><a href="https://www.check-dein-spiel.de" target="_blank" rel="noopener">check-dein-spiel.de</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <p>© <span id="y">2026</span> Dream Spielcenter Kaufering · Betreiber: <span class="ph">laut Impressum ergänzen</span></p>
+    <ul>
+      <li><a href="#">Impressum</a></li>
+      <li><a href="#">Datenschutz</a></li>
+      <li><a href="#spielerschutz">Spielerschutz</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  // Einblenden beim Scrollen
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // Geöffnet/geschlossen live (Zeitzone Berlin). Öffnung am Tag d bis 3 Uhr des Folgetags.
+  const OPEN = { 0: 11, 1: 9, 2: 9, 3: 9, 4: 9, 5: 9, 6: 9 }, CLOSE = 3;
+  const parts = new Intl.DateTimeFormat('de-DE', { timeZone: 'Europe/Berlin', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
+  const map = { So: 0, Mo: 1, Di: 2, Mi: 3, Do: 4, Fr: 5, Sa: 6 };
+  const day = map[parts.find(p => p.type === 'weekday').value.replace('.', '')];
+  const h = +parts.find(p => p.type === 'hour').value + (+parts.find(p => p.type === 'minute').value) / 60;
+  const prev = (day + 6) % 7;
+  const isOpen = h < CLOSE || h >= OPEN[day];
+  const bizDay = h < CLOSE ? prev : day;
+  document.querySelector(`#hours-body tr[data-d="${bizDay}"]`)?.classList.add('today');
+  const st = document.getElementById('now-status'), sub = document.getElementById('now-sub');
+  if (isOpen) {
+    st.innerHTML = 'Jetzt <em>geöffnet.</em>';
+    sub.textContent = 'Heute Nacht bis 3:00 Uhr.';
+    document.getElementById('hero-status').textContent = 'Jetzt geöffnet · bis 3 Uhr';
+    ['now-dot', 'hero-dot'].forEach(id => document.getElementById(id).classList.add('open'));
+  } else {
+    st.innerHTML = 'Ab <em>' + OPEN[day] + ' Uhr</em> wieder da.';
+    sub.textContent = 'Wir öffnen heute um ' + OPEN[day] + ':00 Uhr.';
+  }
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
