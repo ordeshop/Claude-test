@@ -1,10 +1,10 @@
 ---
 name: awesome-design-md
-description: "Brand-inspired design systems as plain-text DESIGN.md files for building consistent UIs. Use when a user asks to build, style, or theme UI in the look-and-feel of a known brand (e.g. Stripe, Linear, Vercel, Notion, Apple, Airbnb, Figma, Spotify, Tesla) or wants a reference design system to follow. Bundles 74 DESIGN.md files capturing color palettes, typography, components, layout, elevation, and guardrails. Source: VoltAgent/awesome-design-md (MIT)."
+description: "Brand-inspired design systems as plain-text DESIGN.md files for building consistent UIs. Use when a user asks to build, style, or theme UI in the look-and-feel of a known brand (e.g. Stripe, Linear, Vercel, Notion, Apple, Airbnb, Figma, Spotify, Tesla) or wants a reference design system to follow. Bundles 84 DESIGN.md files capturing color palettes, typography, components, layout, elevation, and guardrails. Source: VoltAgent/awesome-design-md (MIT)."
 license: MIT
 metadata:
   source: "https://github.com/VoltAgent/awesome-design-md"
-  brands: 74
+  brands: 84
 ---
 
 # awesome-design-md — Brand Design Systems
@@ -36,7 +36,7 @@ design system already.
 ## How to use
 
 1. **Pick the brand.** Match the user's request to a slug in
-   `references/catalog.md` (74 brands, each with a one-line description).
+   `references/catalog.md` (84 brands, each with a one-line description).
 2. **Read the design system.** Open `design-md/<slug>/DESIGN.md` from this
    skill's directory. It contains YAML frontmatter (name, description, colors,
    typography) followed by prose sections on components, layout, depth, and

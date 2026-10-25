@@ -17,7 +17,7 @@ Alles Aktuelle liegt in eigenen, privaten Repositories:
 
 ### Das Plugin „orde-design"
 
-34 Claude-Code-Skills als ein Plugin. Wird weiter genutzt:
+66 Claude-Code-Skills als ein Plugin. Wird weiter genutzt:
 
 ```
 /plugin marketplace add ordeshop/Claude-test
@@ -25,6 +25,11 @@ Alles Aktuelle liegt in eigenen, privaten Repositories:
 ```
 
 Alternativ global per Skript: `./install.sh`
+
+Design-Vorlagen (Stand 25.10.2026): `awesome-design-md` mit 84 Marken-Stilen
+(Quelle VoltAgent, Vorschau auf https://getdesign.md) und `awesome-claude-design`
+mit 30 Stilen nach Stilfamilie, 8 Remixen, Prompt-Packs, Rezepten und Anti-KI-Look-Regeln
+(Quelle rohitg00). Beide MIT-lizenziert.
 
 **Nicht verschieben und dieses Repo nicht umbenennen.** `.claude-plugin/marketplace.json`
 verweist auf `./plugins/orde-design`, und die Installationsadresse steht in

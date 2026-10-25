@@ -4,8 +4,10 @@ Each entry maps a brand slug to its DESIGN.md. Read `design-md/<slug>/DESIGN.md`
 
 | Slug | Description |
 |------|-------------|
+| `1win` | An analysis of 1win's design language — a near-black crypto casino and sportsbook built on Inter at heavy weights, where a vivid green action color and an elect |
 | `airbnb` | A warm, generous consumer marketplace anchored on a clean white canvas and Airbnb Rausch (#ff385c), the single brand voltage that carries every primary CTA, sea |
 | `airtable` | A sober, editorial workflow-software interface anchored on white canvas and dark-ink type, where brand voltage comes from full-bleed signature cards in coral, d |
+| `aljazeera` | An analysis of Al Jazeera's design language — a hard-news editorial system built on flat white paper and dense Roboto headline stacks, signed by one saturated o |
 | `apple` | A photography-first interface that turns marketing into a museum gallery. Edge-to-edge product tiles alternate light and dark canvases, framed by SF Pro Display |
 | `binance` | A confident financial-platform interface anchored on a deep near-black canvas, where Binance's iconic yellow (#FCD535) carries every primary CTA, brand accent,  |
 | `bmw-m` | A motorsport-engineering interface anchored on a near-black canvas with white BMW Type Next Latin display headlines in confident UPPERCASE. The brand carries no |
@@ -20,6 +22,7 @@ Each entry maps a brand slug to its DESIGN.md. Read `design-md/<slug>/DESIGN.md`
 | `composio` | A developer-tools brand for AI-agent tool integration whose marketing surfaces lean into a dark, technical aesthetic with a single deep-electric-blue voltage (` |
 | `cursor` | An AI-first code editor whose marketing site reads like a quietly-confident developer-tools brand with a warm-cream editorial canvas (`#f7f7f4`) instead of the  |
 | `dell-1996` | An inspired interpretation of Dell.com's 1996 design language — a catalog-era enterprise web design built around a literal black page frame, vivid flat color- |
+| `dji` | An analysis of DJI's design language — a product-photography showroom for drones and cameras, where full-bleed studio renders sit in square, gutter-separated ti |
 | `elevenlabs` | A voice-AI brand whose marketing surfaces read like a quietly editorial print magazine. The base canvas is off-white (`#f5f5f5`) holding warm near-black ink (`# |
 | `expo` | A React Native developer-platform whose marketing site reads like a quietly-confident infrastructure brand. The base canvas is pure white with a soft sky-blue g |
 | `ferrari` | A luxury-automotive brand whose marketing surfaces read as cinematic editorial. The base canvas is **near-black** (`#181818`) holding pure white display type; w |
@@ -29,23 +32,29 @@ Each entry maps a brand slug to its DESIGN.md. Read `design-md/<slug>/DESIGN.md`
 | `hp` | An inspired interpretation of HP's design language — a white-paper enterprise-consumer system anchored by HP Electric Blue (`#024ad8`) as the lone signal CTA, |
 | `ibm` | An enterprise-marketing canvas faithful to Carbon Design System: white surfaces, charcoal type, IBM Blue (#0f62fe) as the single confident accent, and a deliber |
 | `intercom` | An editorial customer-service marketing canvas built around a soft cream-white ground, charcoal type set in Saans (Intercom's proprietary geometric sans), and a |
+| `jobright` | An analysis of Jobright's design language — an AI job-hunting platform built on an energetic spring-mint green against black and white, with pale-mint section b |
 | `kraken` | (design system) |
 | `lamborghini` | (design system) |
 | `linear.app` | A near-black product-focused marketing canvas built around #010102 (the deepest dark surface of any tool in this collection), light gray text (#f7f8f8), and the |
 | `lovable` | (design system) |
 | `mastercard` | (design system) |
+| `mercury` | An analysis of Mercury's design language — a fintech system that moves between a deep ink-violet night world on the homepage and a pale, near-white light world  |
 | `meta` | Meta's design system spans hardware commerce (Quest VR, Ray-Ban Meta AI glasses) and brand surfaces with a confident product-merchandising voice. The system pai |
 | `minimax` | MiniMax presents itself as a premium AI infrastructure brand through a striking duality — bold black-pill CTAs and stark white canvas for marketing, paired wi |
 | `mintlify` | Mintlify presents documentation infrastructure with a dual-mode aesthetic — atmospheric sky-gradient marketing heroes (cloud illustration backdrops, soft crea |
 | `miro` | Miro presents itself as the AI-powered visual workspace through a confident, almost playful brand voice — anchored by its signature canary yellow ({colors.bra |
 | `mistral.ai` | Mistral AI brands itself with a singular signature — atmospheric sunset gradients (mustard, orange, deep red) layered over photography of mountains, plus a ho |
 | `mongodb` | MongoDB carries a strong dual-mode visual identity — dark deep-teal hero bands with bright MongoDB green ({colors.brand-green}) CTAs paired with stark white d |
+| `mydealz` | An analysis of mydealz's design language — a high-density German deals-community system built on a confident brand green, where a stacked white-card feed carrie |
+| `nerdwallet` | An analysis of NerdWallet's design language — a personal-finance comparison platform built almost entirely from one deep green and a ladder of mints beneath it. |
 | `nike` | | |
 | `nintendo-2001` | An analysis of Nintendo.com's 2001 design language — a brushed-periwinkle console chrome interface where every panel is a beveled metal plate, navigation glow |
 | `notion` | Notion presents itself as the all-in-one workspace through a confident, illustration-rich brand voice — anchored by a deep navy hero band ({colors.brand-navy} |
 | `nvidia` | | |
 | `ollama` | | |
 | `opencode.ai` | | |
+| `oracle` | An analysis of Oracle's design language — an enterprise system built on a warm neutral ladder rather than a colour palette. Six numbered greys carry almost ever |
+| `oura` | An analysis of Oura's design language — a warm-paper wellness system that pairs a high-contrast Editorial serif with a quiet grotesque sans, wraps every surface |
 | `pinterest` | | |
 | `playstation` | | |
 | `posthog` | | |
@@ -56,6 +65,7 @@ Each entry maps a brand slug to its DESIGN.md. Read `design-md/<slug>/DESIGN.md`
 | `revolut` | | |
 | `runwayml` | (design system) |
 | `sanity` | (design system) |
+| `sap` | An analysis of SAP's design language — an enterprise system that keeps almost everything on white and spends its structure on two greys and one blue. The chrome |
 | `sentry` | An inspired interpretation of Sentri's design language — a developer-tools brand built on a deep purple-violet midnight canvas, electric lime accents, and a s |
 | `shopify` | An inspired interpretation of Shopifi's design language — a cinematic commerce platform that runs two parallel design tracks. The marketing-hero and product-n |
 | `slack` | An inspired interpretation of Slacc's design language — a workplace messaging brand built on a deep aubergine primary, with cream-lavender hero gradients, blu |
