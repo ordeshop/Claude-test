@@ -17,7 +17,7 @@ Alles Aktuelle liegt in eigenen, privaten Repositories:
 
 ### Das Plugin „orde-design"
 
-66 Claude-Code-Skills als ein Plugin. Wird weiter genutzt:
+67 Claude-Code-Skills als ein Plugin. Wird weiter genutzt:
 
 ```
 /plugin marketplace add ordeshop/Claude-test
