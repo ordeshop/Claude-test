@@ -15,25 +15,13 @@ Alles Aktuelle liegt in eigenen, privaten Repositories:
 
 ## Was hier noch liegt und warum
 
-### Das Plugin „orde-design"
+### Das frühere Plugin „orde-design" (eingefroren)
 
-67 Claude-Code-Skills als ein Plugin. Wird weiter genutzt:
-
-```
-/plugin marketplace add ordeshop/Claude-test
-/plugin install orde-design@orde-skills
-```
-
-Alternativ global per Skript: `./install.sh`
-
-Design-Vorlagen (Stand 25.10.2026): `awesome-design-md` mit 84 Marken-Stilen
-(Quelle VoltAgent, Vorschau auf https://getdesign.md) und `awesome-claude-design`
-mit 30 Stilen nach Stilfamilie, 8 Remixen, Prompt-Packs, Rezepten und Anti-KI-Look-Regeln
-(Quelle rohitg00). Beide MIT-lizenziert.
-
-**Nicht verschieben und dieses Repo nicht umbenennen.** `.claude-plugin/marketplace.json`
-verweist auf `./plugins/orde-design`, und die Installationsadresse steht in
-jeder Anleitung.
+Seit 25.10.2026 **kein Plugin mehr**. Alle Design-Werkzeuge liegen zentral in
+`ordeshop/Business-Handbuch` → `werkzeuge/website/`, Video-Werkzeuge in
+`werkzeuge/video/`. Was hier unter `plugins/orde-design/` liegt, ist ein alter
+Stand und wird nicht mehr gepflegt (siehe `plugins/orde-design/EINGEFROREN.md`).
+Kann gelöscht werden, sobald das Plugin im Account entfernt ist.
 
 ### Die alten englischen Demo-Seiten
 
