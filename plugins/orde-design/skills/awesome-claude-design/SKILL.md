@@ -66,12 +66,14 @@ assets. Never reproduce logos, trademarks or copyrighted imagery — use the tok
 - **Relaunch:** `prompts/brand-to-design-md.md` auf die alte Kundenseite anwenden,
   damit der Wiedererkennungswert bleibt, und `prompts/audit-live-site.md` als
   Grundlage für die Verkaufsargumente (Punch-List) in der Akquise-Mail.
-- **Lokale Betriebe:** Café/Restaurant/Friseur → meist `warm` oder `indie`;
-  Fitness/Handwerk → `cinematic` oder `brutalist`; Premium-Dienstleister → `editorial`
-  oder `glass`. Nie 1:1 eine Marke kopieren.
-- **Senmi:** `warm`/`indie` passt zur ruhigen Matcha-Optik; Farben an Matcha-Grün anpassen.
-- **Ads/Videos:** dieselben Tokens (Farben, Schrift) im Skill `motion-studio` verwenden,
-  damit Website und Ad einheitlich wirken.
+- **Verbindlich ist `Business-Handbuch/ORDE-STIL.md`.** Diese Skill liefert Referenzen
+  und die Anti-KI-Look-Prüfung, keine Schablone. Farben und Schriften kommen immer vom
+  Betrieb (Logo, Laden, Material), nie 1:1 von einer Marke.
+- **Vorsicht:** `warm` (Creme + Serif + erdiger Akzent), `editorial` (Haarlinien-Raster)
+  und dunkle `cinematic`-Stile (fast schwarz + grelle Akzentfarbe) sind genau die drei
+  KI-Standardlooks aus ORDE-STIL.md. Nur wählen, wenn der Betrieb es wirklich verlangt.
+- **Senmi und Ads:** dieselbe Regel; Tokens aus der Marke, im Skill `motion-studio`
+  dieselben Farben und Schriften verwenden.
 
 Combine with `awesome-design-md` (brand catalog), `design-taste-frontend`,
 `high-end-visual-design`, `impeccable` and `ui-ux-pro-max` for implementation quality.
