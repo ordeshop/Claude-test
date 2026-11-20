@@ -1,6 +1,7 @@
 # Bilder für LEINWERK erzeugen (Kling) — Anleitung & fertige Prompts
 
-Die Website nutzt aktuell **graue Platzhalter**. Diese Datei enthält alles, um
+Die Bilder in `images/` sind vorhanden (Stand 20.11.2026, keine grauen
+Platzhalter mehr). Diese Datei enthält alles, um
 sie durch echte, stimmige Bilder zu ersetzen — erzeugt mit **Kling
 `text_to_image`** in einer **interaktiven** Claude-Code-Session (Terminal oder
 Desktop-App), wo die Tool-Freigabe funktioniert (in der Web-/Remote-Session
@@ -71,8 +72,8 @@ python3 scripts/bilder-vorbereiten.py roh/
 
 Das Skript beschneidet jedes Bild mittig auf das richtige Seitenverhältnis
 (Hero 16:9 → 1600×900, alle anderen 4:5 → 800×1000) und schreibt je Bild
-`images/<name>.webp` **und** `images/<name>.jpg`. Bestehende graue Platzhalter
-werden dabei überschrieben.
+`images/<name>.webp` **und** `images/<name>.jpg`. Bestehende Bilder gleichen
+Namens werden dabei überschrieben.
 
 ---
 
