@@ -24,7 +24,7 @@ atelier/
 ├─ products.js       ← DEINE TEILE  ← hier pflegst du die Kollektion
 ├─ app.js            ← Technik (Anfrage-Formular, Detailansicht)
 ├─ fonts/            ← Schriften, lokal gespeichert (DSGVO)
-├─ images/           ← Bilder (aktuell graue Platzhalter im Format 4:5)
+├─ images/           ← Bilder, je WebP und JPG (Hero 16:9, alle anderen 4:5)
 └─ README.md         ← diese Anleitung
 ```
 
@@ -77,8 +77,8 @@ ausgegraut und bekommt automatisch das Badge „Verkauft“.
 
 ## Bilder ersetzen (Ordner `images/`)
 
-Die Bilder sind aktuell **graue Platzhalter**. So tauschst du sie gegen echte
-Fotos:
+Im Ordner liegen Bilder zu allen Teilen (Stand 20.11.2026, keine grauen Platzhalter
+mehr). So tauschst du sie gegen echte Fotos:
 
 1. Lege deine Fotos im **Format 4:5** an (Hochformat, z. B. 800 × 1000 Pixel).
    Das feste Format verhindert „springende“ Layouts beim Laden.

@@ -16,7 +16,6 @@ venv/
 
 # Pakete und Zwischenstaende
 *.zip
-!account-backup/zips/*.zip
 /tmp/
 *.log
 *.bak
