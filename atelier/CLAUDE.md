@@ -18,7 +18,8 @@ ausgeliefert. In Shopify wird sie als HTML-Card verlinkt — Thumbnail unter
 `…/assets/thumb-<demo>.jpg` (16:10). Neue Demo = (a) Ordner + Showcase-Card im Repo,
 (b) Card auf `/pages/web-design`, (c) eigene Branchenseite `/pages/website-<branche>`.
 Stand 20.11.2026: Die Demos und Thumbnails sind aus diesem Repo entfernt (Commit 2ba9976), sie liegen in
-`orde-demos`. Ob Shopify-Seiten noch hierher verlinken, ist offen.
+`orde-demos`. Geprüft am 20.11.2026: Es gibt nur noch den Shopify-Shop SENMI. Dort verlinkt keine Seite und kein
+Menü hierher, `/pages/web-design` und die Branchenseiten existieren nicht mehr. Der Absatz oben ist damit nur Geschichte.
 
 ### 1. `<img>`-Attribute `width`/`height` heben CSS `aspect-ratio` aus
 **Symptom:** Beim Klick auf ein Produkt wurde das Lightbox-Bild verzerrt/zu hoch
